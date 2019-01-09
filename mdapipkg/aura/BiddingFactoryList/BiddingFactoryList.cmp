@@ -1,0 +1,34 @@
+<aura:component>
+    <aura:attribute name="factory_list" type="Object" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+    <aura:attribute name="trade_open" type="Boolean" default="false" />
+    
+    <aura:attribute name="trade_item" type="object"/>
+    <aura:attribute name="trade_view" type="String" default="view" />
+    <c:BuyerTradeConfirmation 
+            offer_data="{!v.trade_item}" 
+            open="{!v.trade_open}" 
+            status_view="{!v.trade_view}"/>
+    <aura:handler event="c:ReloadEvent" action="{!c.reloadData}" />
+    
+	<ltng:require 
+	styles="{!join(',',
+	$Resource.jquery + '/jquery/jquery-ui.css',
+	$Resource.pqgrid + '/pqgrid.min.css',
+	$Resource.pqgrid + '/pqgrid.ui.min.css',
+	$Resource.pqgrid + '/themes/bootstrap/pqgrid.css'
+	)}" 
+	scripts="{!join(',',
+	$Resource.jquery + '/jquery/jquery.min.js',
+    $Resource.jquery + '/jquery/jquery-ui.min.js',
+    $Resource.pqgrid + '/pqgrid.min.js',
+    $Resource.pqgrid + '/localize/pq-localize-en.js',
+    $Resource.pqgrid + '/touch-punch/touch-punch.min.js',
+    $Resource.pqgrid + '/jsZip-2.5.0/jszip.min.js'
+    )}"
+    afterScriptsLoaded="{!c.loadScript}" 
+    />
+
+    <div id="grid_json"></div>
+</aura:component>

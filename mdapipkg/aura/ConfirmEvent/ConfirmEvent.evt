@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Event template" >
+	<aura:attribute name="eventName" type="string"/>
+	<aura:attribute name="pull_confirm_item" type="object"/>
+</aura:event>

@@ -1,0 +1,152 @@
+<aura:component controller="SellerTradePanelController">
+    <aura:attribute name="open" type="Boolean" default="false" />
+    <aura:attribute name="quote_data" type="Quotation__c" />
+    <aura:attribute name="history_list" type="Quotation_Iteration__c" />
+    <aura:attribute name="onLoadingHistory" type="Boolean" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+    <aura:if isTrue="{! v.open}">
+
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large" aria-labelledby="modal-heading-01"
+            aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close" onclick="{! c.onCancel }" alternativeText="close"
+                        variant="bare-inverse" class="slds-modal__close" />
+                    <h2 class="slds-text-heading_medium slds-hyphenate">HISTORY</h2>
+                </header>
+
+                <div class="slds-modal__content">
+                        <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_1-of-1">
+                                    <h4 class="header">{!v.quote_data.Consumer__r.Name}-{!v.quote_data.Buyer__r.Name}</h4>
+                                </div>
+                                <div class="slds-col slds-size_1-of-1">
+                                    <div class="quote-field-container">
+                                        <div class="slds-grid">
+                                            <div class="slds-col slds-size_3-of-6">
+                                                <div class="quote-field">
+                                                    <label><b>FACTORY:</b>&nbsp;&nbsp;{!v.quote_data.Factory__r.Name}</label>
+                                                </div>
+                                                <div class="quote-field">
+                                                    <label><b>PORT:</b>&nbsp;&nbsp;{!v.quote_data.Factory__r.Port__c}</label>
+                                                </div>
+                                                <div class="quote-field">
+                                                    <label><b>GRADE:</b>&nbsp;&nbsp;{!v.quote_data.Grade__r.Name}</label>
+                                                </div>
+                                                <div class="quote-field">
+                                                    <label><b>PACKING:</b>&nbsp;&nbsp;{!v.quote_data.Packing__r.Name}</label>
+                                                </div>
+                                            </div>
+                                            <div class="slds-col slds-size_3-of-6">
+                                                <div class="quote-field">
+                                                    <label><b>SYMBOL:</b>&nbsp;&nbsp;{!v.quote_data.Factory_Symbol__c}</label>
+                                                </div>
+                                                <div class="quote-field">
+                                                    <label><b>SHIPMENT:</b>&nbsp;&nbsp;{!v.quote_data.Shipment_Information__r.Incoterm__c}</label>
+                                                </div>
+                                                <div class="quote-field">
+                                                    <label><b>MONTH:</b>&nbsp;&nbsp;{!v.quote_data.Month__c}</label>
+                                                </div>
+                                                <div class="quote-field">
+                                                    <label><b>PAYMENT TERMS:</b>&nbsp;&nbsp;{!v.quote_data.Payment_Term__r.Payment_Term__c}</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-1">
+        
+                                    <div class="{!v.onLoadingHistory? '' : 'slds-hidden' }">
+                                        <c:LoadingBar />
+                                    </div>
+                                    <div class="list_container">
+                                        <table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal">
+                                            <thead>
+                                                <tr class="slds-line-height_reset">
+                                                    <th class="slds-text-title_caps" scope="col">
+                                                        <div class="slds-truncate" title="number">NO.</div>
+                                                    </th>
+                                                    <th class="slds-text-title_caps" scope="col">
+                                                        <div class="slds-truncate" title="UPDATE">LATER UPDATE<br />DATE/TIME</div>
+                                                    </th>
+                                                    <th class="slds-text-title_caps" scope="col">
+                                                        <div class="slds-truncate" title="NAME">NAME</div>
+                                                    </th>
+                                                    <th class="slds-text-title_caps" scope="col">
+                                                        <div class="slds-truncate" title="STATUS">STATUS</div>
+                                                    </th>
+                                                    <th class="slds-text-title_caps" scope="col">
+                                                        <div class="slds-truncate" title="BID VOL">BID VOL</div>
+                                                    </th>
+                                                    <th class="slds-text-title_caps" scope="col">
+                                                        <div class="slds-truncate" title="BID">BID</div>
+                                                    </th>
+                                                    <th class="slds-text-title_caps" scope="col">
+                                                        <div class="slds-truncate" title="ASK">ASK</div>
+                                                    </th>
+                                                    <th class="slds-text-title_caps" scope="col">
+                                                        <div class="slds-truncate" title="ASK VOL">ASK VOL</div>
+                                                    </th>
+                                                    <th class="slds-text-title_caps" scope="col">
+                                                        <div class="slds-truncate" title="COMMENT">COMMENT</div>
+                                                    </th>
+        
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <aura:iteration var="row" items="{!v.history_list}" indexVar="index">
+                                                    <tr class="slds-hint-parent">
+                                                        <td scope="row" data-label="number">
+                                                            <div class="slds-truncate" title="{!v.history_list.length - index}">{!v.history_list.length
+                                                                - index}</div>
+                                                        </td>
+                                                        <td scope="row" data-label="UPDATE">
+                                                            <div class="slds-truncate" title="{!row.LastModifiedDate}">
+                                                                <c:FormatDate date="{!row.LastModifiedDate}" />
+                                                            </div>
+                                                        </td>
+                                                        <td scope="row" data-label="NAME">
+                                                            <div class="slds-truncate" title="{!row.Buyer__r.Name}">{!row.LastModifiedBy.Name}</div>
+                                                        </td>
+                                                        <td scope="row" data-label="STATUS">
+                                                            <div class="slds-truncate" title="{!row.Quotation_Status__c}">{!row.Quotation_Status__c}</div>
+                                                        </td>
+                                                        <td scope="row" data-label="BID VOL">
+                                                            <div class="slds-truncate" title="{!row.Bid_Volume__c}">
+                                                                <c:FormatPrice price="{!row.Bid_Volume__c}" />
+                                                            </div>
+                                                        </td>
+                                                        <td scope="row" data-label="BID">
+                                                            <div class="slds-truncate" title="{!row.Bid_Price__c}">
+                                                                <c:FormatPrice price="{!row.Bid_Price__c}" />
+                                                            </div>
+                                                        </td>
+                                                        <td scope="row" data-label="ASK">
+                                                            <div class="slds-truncate" title="{!row.Ask_Price__c}">
+                                                                <c:FormatPrice price="{!row.Ask_Price__c}" />
+                                                            </div>
+                                                        </td>
+                                                        <td scope="row" data-label="ASK VOL">
+                                                            <div class="slds-truncate" title="{!row.Ask_Volume__c}">
+                                                                <c:FormatPrice price="{!row.Ask_Volume__c}" />
+                                                            </div>
+                                                        </td>
+                                                        <td scope="row" data-label="COMMENT">
+                                                            <div class="slds-truncate" title="{!row.Comment__c}">{!row.Comment__c}</div>
+                                                        </td>
+                                                    </tr>
+                                                </aura:iteration>
+                                            </tbody>
+                                        </table>
+                                    </div>
+        
+        
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,44 @@
+.THIS {
+}
+.THIS .information{
+	white-space: pre-wrap;
+}
+.THIS .color-header{
+	background-color: #6B7c85 !important;
+	color: white;
+}
+.THIS tbody{
+	display: block;
+	overflow: auto;
+   	height: 250px;
+}
+.THIS thead{
+	display: block;
+}
+
+.THIS td:nth-child(1){
+    width: 50%;
+}
+.THIS th:nth-child(1){
+    width: 50%;
+}
+
+
+.THIS td:nth-child(2){
+    width: 100%;
+}
+.THIS th:nth-child(2){
+    width: 100%;
+}
+
+.THIS td:nth-child(3){
+	width: 100%;
+}
+.THIS th:nth-child(3){
+	width: 100%;
+}
+
+
+.THIS tr:nth-child(odd) {background: #FFF}
+
+.THIS tr:nth-child(even) {background: #eee}

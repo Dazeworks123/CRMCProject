@@ -1,0 +1,7 @@
+<aura:component>
+<aura:attribute name="data_list" type="Object"/>
+<aura:attribute name="view" type="String" />
+<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+<c:BiddingFactoryList factory_list="{!v.data_list}"/>
+
+</aura:component>

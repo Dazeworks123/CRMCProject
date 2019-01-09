@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Certifications__c</fullName>
+    <externalId>false</externalId>
+    <label>Certifications</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ISO 9001</fullName>
+                <default>false</default>
+                <label>ISO 9001</label>
+            </value>
+            <value>
+                <fullName>ISO 14001</fullName>
+                <default>false</default>
+                <label>ISO 14001</label>
+            </value>
+            <value>
+                <fullName>SNI 1903</fullName>
+                <default>false</default>
+                <label>SNI 1903</label>
+            </value>
+            <value>
+                <fullName>HEVEAPRO&amp;C-TRAT</fullName>
+                <default>false</default>
+                <label>HEVEAPRO&amp;C-TRAT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

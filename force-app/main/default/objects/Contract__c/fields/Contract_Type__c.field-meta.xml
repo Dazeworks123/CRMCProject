@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Contract Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>HCSS</fullName>
+                <default>false</default>
+                <label>HCSS</label>
+            </value>
+            <value>
+                <fullName>HCPS</fullName>
+                <default>false</default>
+                <label>HCPS</label>
+            </value>
+            <value>
+                <fullName>HCPO</fullName>
+                <default>false</default>
+                <label>HCPO</label>
+            </value>
+            <value>
+                <fullName>HCSO</fullName>
+                <default>false</default>
+                <label>HCSO</label>
+            </value>
+            <value>
+                <fullName>HCPF</fullName>
+                <default>false</default>
+                <label>HCPF</label>
+            </value>
+            <value>
+                <fullName>HCSF</fullName>
+                <default>false</default>
+                <label>HCSF</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

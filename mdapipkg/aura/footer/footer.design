@@ -1,0 +1,3 @@
+<design:component>
+	<design:attribute name="footer_text" label="Footer Text" description="Footer text" />
+</design:component>

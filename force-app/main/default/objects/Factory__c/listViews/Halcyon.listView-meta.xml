@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Halcyon</fullName>
+    <columns>NAME</columns>
+    <columns>Factory_Code__c</columns>
+    <columns>Producer_s_Group__c</columns>
+    <columns>Port__c</columns>
+    <columns>Factory_Location__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Producer_s_Group__c</field>
+        <operation>equals</operation>
+        <value>Hevea Global</value>
+    </filters>
+    <label>Halcyon</label>
+</ListView>

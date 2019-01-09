@@ -1,0 +1,36 @@
+<aura:component>
+
+	<aura:attribute name="information_info" type="object" />
+
+	<!-- <div class="slds-scrollable_y" style="height: 300px;"> -->
+	<table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal">
+
+		<thead>
+			<tr class="slds-line-height_reset">
+				<aura:iteration var="header" items="{!v.information_info.header}" indexVar="indx">
+					<th class="slds-text-title_caps color-header" scope="col">
+						<div class="slds-truncate information" title="{!header.label}">{!header.label}</div>
+					</th>
+				</aura:iteration>
+			</tr>
+		</thead>
+
+		<tbody>
+			<aura:iteration var="row" items="{!v.information_info.data}">
+				<tr class="slds-hint-parent">
+					<aura:iteration var="header" items="{!v.information_info.header}">
+						<td scope="row" data-label="{!header.label}">
+							<aura:iteration var="field" items="{!row}">
+								<aura:if isTrue="{! field.fieldname == header.name}">
+									<div class="slds-truncate information" title="{!field.value}">{!field.value}</div>
+								</aura:if>
+							</aura:iteration>
+						</td>
+					</aura:iteration>
+				</tr>
+			</aura:iteration>
+		</tbody>
+	</table>
+	<!-- </div> -->
+
+</aura:component>

@@ -1,0 +1,25 @@
+.THIS {
+}
+.THIS .box-loading-table{
+	padding: 130px;
+}
+
+.THIS .slds-form-element__label
+{
+	font-weight: bold;
+}
+.THIS .btn-right
+{
+	text-align: right;
+    padding-top: 24px;
+}
+.THIS .txt-right
+{
+	text-align: right;
+}
+
+.THIS .btn-secondary{
+    background-color: #6B7c85;
+    color: white;
+    border-color: #6B7c85;
+}

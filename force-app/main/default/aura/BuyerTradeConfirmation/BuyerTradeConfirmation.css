@@ -1,0 +1,92 @@
+.THIS .header_title{
+	font-size: 16px;
+	margin-bottom: .75rem;
+}
+
+.THIS .slds-card{
+	background-color: #f3f2f2;
+	margin-bottom: .75rem;
+}
+
+.THIS .slds-card__header{
+	background-color: #c9c7c5;
+
+}
+
+.THIS .header-text{
+	text-transform: uppercase;
+}
+
+.THIS .card-header{
+	background-color: #6B7c85;
+	color: white;
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+}
+
+.THIS .slds-card__body_inner{
+	padding-top: .75rem;
+	padding-bottom: .75rem;
+}
+
+.THIS .boundary{
+	border-color: rgba(0, 119, 179, 1);
+}
+
+.THIS .boundary-opa{
+	border-color: rgba(0, 119, 179, 0.5);
+}
+
+.THIS .add-card-margin{
+    margin-top: 9.5px;
+    margin-bottom: 9.5px;
+}
+
+.THIS .card-price-header{
+	background-color: rgba(0, 119, 179, 1);
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+}
+
+.THIS .card-price-header-opa{
+	background-color: rgba(0, 119, 179, 0.5);
+	padding-top: .25rem;
+	padding-bottom: .25rem;
+}
+
+.THIS .card-price-header-text{
+	color: #fff;
+	text-transform: uppercase; 
+}
+
+.THIS .card-price{
+	background-color: transparent;
+}
+
+.THIS .add-margin{
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+.THIS .add-margin-with-price{
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
+.THIS .cf-margin-price{
+	margin-top: 9.5px;
+	margin-bottom: 9.5px;
+}
+
+.THIS .slds-notify,.THIS .slds-progress-bar{
+	margin-bottom: 5px;
+}
+
+
+.THIS .btn-primary-opa{
+	opacity: 0.5;
+
+}
+.THIS .user{
+	color: rgba(0, 119, 179, 1)
+}

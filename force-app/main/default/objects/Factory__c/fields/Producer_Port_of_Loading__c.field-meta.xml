@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Producer_Port_of_Loading__c</fullName>
+    <externalId>false</externalId>
+    <label>Producer&#39;s Port of Loading (POL)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Belawan</fullName>
+                <default>false</default>
+                <label>Belawan</label>
+            </value>
+            <value>
+                <fullName>Palembang</fullName>
+                <default>false</default>
+                <label>Palembang</label>
+            </value>
+            <value>
+                <fullName>Jambi</fullName>
+                <default>false</default>
+                <label>Jambi</label>
+            </value>
+            <value>
+                <fullName>Surabaya</fullName>
+                <default>false</default>
+                <label>Surabaya</label>
+            </value>
+            <value>
+                <fullName>Padang</fullName>
+                <default>false</default>
+                <label>Padang</label>
+            </value>
+            <value>
+                <fullName>Pontianak</fullName>
+                <default>false</default>
+                <label>Pontianak</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

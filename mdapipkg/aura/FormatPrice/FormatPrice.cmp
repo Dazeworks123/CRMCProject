@@ -1,0 +1,6 @@
+<aura:component>
+        <aura:attribute name="price" type="Decimal"/>
+        <aura:attribute name="price_format" type="Decimal"/>
+        <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+        {!v.price_format}
+</aura:component>

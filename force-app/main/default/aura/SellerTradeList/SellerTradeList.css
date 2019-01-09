@@ -1,0 +1,135 @@
+.THIS .slds-text-title_caps
+{
+	background-color: #6B7c85 !important;
+	color: white;
+}
+
+.THIS .sort
+{
+	cursor: pointer;
+}
+.THIS .sort:hover
+{
+	text-decoration: underline;
+}
+.THIS tr:nth-child(odd) {background: #FFF}
+
+.THIS tr:nth-child(even) {background: #eee}
+
+.THIS th:nth-child(12) {
+	border-right: 1px solid #ccc;
+}
+.THIS th:nth-child(10) {
+	border-right: 1px solid #ccc;
+}
+.THIS th:nth-child(9) {
+	border-left: 1px solid #ccc;
+}
+
+.THIS tr.tr-close,.THIS tr.tr-close:hover
+{
+	background: #6d7c85 !important;	
+}
+.THIS td.td-close {
+    background: #6d7c85;
+    color: #ffffff;
+    text-align: center;
+}
+
+.THIS .header{
+	font-size: 14px;
+}
+
+
+/* ปรับ ความกว้างของแต่ละ column */
+
+.THIS th:nth-child(1){
+    width: 3.5%;
+}
+.THIS th:nth-child(2){
+    width: 7%;
+}
+.THIS th:nth-child(3){
+    width: 9%
+}
+.THIS th:nth-child(4){
+    width: 9%
+}
+.THIS th:nth-child(5){
+    width: 6%
+}
+.THIS th:nth-child(6){
+    width: 5.5%
+}
+.THIS th:nth-child(7){
+    width: 7%
+}
+.THIS th:nth-child(8){
+    width: 5.5%
+}
+.THIS th:nth-child(10){
+    width: 6%
+}
+.THIS th:nth-child(11){
+    width: 6%
+}
+.THIS th:nth-child(13){
+    width: 4.5%
+}
+.THIS th:nth-child(14){ /* buttons */
+    width: 19%;
+}
+
+
+.THIS .slds-truncate{
+	word-wrap: break-word;
+    white-space: normal;
+}
+
+/* เปลี่ยนสี price กับ vol */
+.THIS .open-table td:nth-child(9), .THIS .open-table td:nth-child(10) {
+	color: rgba(0, 119, 179, 1);
+}
+
+/* For appearance */
+.THIS .sticky-wrap {
+	overflow-x: auto;
+	overflow-y: hidden;
+	position: relative;
+	width: 100%;
+}
+.THIS .sticky-wrap .sticky-thead,
+.THIS .sticky-wrap .sticky-col,
+.THIS .sticky-wrap .sticky-intersect {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: all .125s ease-in-out;
+	z-index: 50;
+	width: auto; /* Prevent table from stretching to full size */
+	margin-top: 76px;
+}
+	.THIS .sticky-wrap .sticky-thead {
+		box-shadow: 0 0.25em 0.1em -0.1em rgba(0,0,0,.125);
+		z-index: 100;
+		width: 100%; /* Force stretch */
+	}
+
+	.THIS .sticky-wrap .sticky-thead th{
+		padding-left: 0.65%
+	}
+
+	.THIS .sticky-wrap .sticky-intersect {
+		opacity: 1;
+		z-index: 150;
+
+	}
+		.THIS .sticky-wrap .sticky-intersect th {
+			background-color: #666;
+			color: #eee;
+		}
+.THIS .sticky-wrap td,
+.THIS .sticky-wrap th {
+	box-sizing: border-box;
+}

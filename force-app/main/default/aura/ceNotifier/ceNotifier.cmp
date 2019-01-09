@@ -1,0 +1,18 @@
+<!--c:ceNotifier-->
+<aura:component>
+    <aura:registerEvent name="cmpEvent" type="c:ceEvent"/>
+    <aura:registerEvent name="popupOpenEvent" type="c:PopupEvent"/>
+    <aura:registerEvent name="popupCloseEvent" type="c:PopupEvent"/>
+    
+    <aura:handler name="popupCloseEvent" event="c:PopupEvent" action="{!c.alert}"/>
+
+    <h1>Simple Component Event Sample</h1>
+    <p><lightning:button
+        label="Click here to fire a component event"
+        onclick="{!c.fireComponentEvent}" />
+
+        <lightning:button
+        label="close popup"
+        onclick="{!c.closePopup}" />
+    </p>
+</aura:component>

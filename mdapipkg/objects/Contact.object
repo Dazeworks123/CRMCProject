@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Alternative_Email__c</fullName>
+        <externalId>false</externalId>
+        <label>Alternative Email</label>
+        <required>false</required>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Contact_Tier__c</fullName>
+        <externalId>false</externalId>
+        <label>Contact Tier</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Board</fullName>
+                    <default>false</default>
+                    <label>Board</label>
+                </value>
+                <value>
+                    <fullName>C-suite</fullName>
+                    <default>false</default>
+                    <label>C-suite</label>
+                </value>
+                <value>
+                    <fullName>Business Head</fullName>
+                    <default>false</default>
+                    <label>Business Head</label>
+                </value>
+                <value>
+                    <fullName>Department Head</fullName>
+                    <default>false</default>
+                    <label>Department Head</label>
+                </value>
+                <value>
+                    <fullName>Country Head</fullName>
+                    <default>false</default>
+                    <label>Country Head</label>
+                </value>
+                <value>
+                    <fullName>Senior Executive</fullName>
+                    <default>false</default>
+                    <label>Senior Executive</label>
+                </value>
+                <value>
+                    <fullName>Executive</fullName>
+                    <default>false</default>
+                    <label>Executive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Date_of_Birth__c</fullName>
+        <externalId>false</externalId>
+        <label>Date of Birth</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Other_Mobile__c</fullName>
+        <externalId>false</externalId>
+        <label>Other Mobile</label>
+        <required>false</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Personal_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Personal Details</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Primary_Function__c</fullName>
+        <externalId>false</externalId>
+        <label>Primary Function</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sales</fullName>
+                    <default>false</default>
+                    <label>Sales</label>
+                </value>
+                <value>
+                    <fullName>Operations</fullName>
+                    <default>false</default>
+                    <label>Operations</label>
+                </value>
+                <value>
+                    <fullName>Technical</fullName>
+                    <default>false</default>
+                    <label>Technical</label>
+                </value>
+                <value>
+                    <fullName>Senior Management</fullName>
+                    <default>false</default>
+                    <label>Senior Management</label>
+                </value>
+                <value>
+                    <fullName>Procurement</fullName>
+                    <default>false</default>
+                    <label>Procurement</label>
+                </value>
+                <value>
+                    <fullName>Marketing/Communications</fullName>
+                    <default>false</default>
+                    <label>Marketing/Communications</label>
+                </value>
+                <value>
+                    <fullName>Research</fullName>
+                    <default>false</default>
+                    <label>Research</label>
+                </value>
+                <value>
+                    <fullName>Risk/Finance</fullName>
+                    <default>false</default>
+                    <label>Risk/Finance</label>
+                </value>
+                <value>
+                    <fullName>M&amp;A</fullName>
+                    <default>false</default>
+                    <label>M&amp;A</label>
+                </value>
+                <value>
+                    <fullName>Corporate Finance</fullName>
+                    <default>false</default>
+                    <label>Corporate Finance</label>
+                </value>
+                <value>
+                    <fullName>Equity</fullName>
+                    <default>false</default>
+                    <label>Equity</label>
+                </value>
+                <value>
+                    <fullName>Wealth Management</fullName>
+                    <default>false</default>
+                    <label>Wealth Management</label>
+                </value>
+                <value>
+                    <fullName>Treasury</fullName>
+                    <default>false</default>
+                    <label>Treasury</label>
+                </value>
+                <value>
+                    <fullName>Press</fullName>
+                    <default>false</default>
+                    <label>Press</label>
+                </value>
+                <value>
+                    <fullName>Board</fullName>
+                    <default>false</default>
+                    <label>Board</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <externalId>false</externalId>
+        <label>Product</label>
+        <required>false</required>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Natural Rubber</fullName>
+                    <default>false</default>
+                    <label>Natural Rubber</label>
+                </value>
+                <value>
+                    <fullName>Synthetic</fullName>
+                    <default>false</default>
+                    <label>Synthetic</label>
+                </value>
+                <value>
+                    <fullName>Latex</fullName>
+                    <default>false</default>
+                    <label>Latex</label>
+                </value>
+                <value>
+                    <fullName>Non-Rubber</fullName>
+                    <default>false</default>
+                    <label>Non-Rubber</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+</CustomObject>

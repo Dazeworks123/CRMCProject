@@ -1,0 +1,49 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="BiddingPanelController">
+	<aura:attribute name="showTable" type="Boolean" default="false"/>
+	<aura:attribute name="onLoading" type="Boolean"/>
+	<aura:attribute name="progress" type="Integer" default="0"/>
+	<aura:attribute name="data_list" type="Object"/>
+	<aura:attribute name="data_filter" type="Object"/>
+
+	<aura:attribute name="DateList" type="Object" />
+	<aura:attribute name="DateSelected" type="Date" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+	<aura:handler name="filter" event="c:BiddingEvent" action="{!c.onFilter}"/>
+	<aura:handler name="onChangeTrade" event="c:TrandeEvent"  action="{!c.onChangeTrade}"/>
+
+	<aura:registerEvent name="appReloadEvent" type="c:ReloadEvent"/>
+	<ltng:require scripts="https://js.pusher.com/4.3/pusher.min.js" afterScriptsLoaded="{!c.setUpPusher}" />
+
+	<div class="slds-grid slds-gutters">
+		<div class="slds-col slds-size_1-of-1">
+			<h3 class="header">BIDDING PANEL</h3>
+		    <hr class="hr" />
+			<c:FilterBiddingPanel/>
+
+			<aura:if isTrue="{! v.onLoading}">
+				<div>
+					<c:LoadingBar/>
+				</div>
+			</aura:if>
+			
+			<aura:if isTrue="{!v.showTable}">
+				<aura:if isTrue="{!!v.onLoading}">
+					<c:BiddingPanelTable data_list="{!v.data_list}"/>
+
+					<div class="slds-grid slds-gutters slds-wrap">
+		  				<div class="slds-col slds-medium-size_1-of-2 slds-size_1-of-1">
+		  					<lightning:button class="btn-secondary" onclick="{!c.last6Month}">Last 6 Month</lightning:button>
+		  				</div>
+		  				<div class="slds-col slds-medium-size_1-of-2 slds-size_1-of-1 txt-right">
+		  					<lightning:button class="btn-secondary" onclick="{!c.next6Month}">Next 6 Month</lightning:button>
+		  				</div>
+		  			</div>
+		  			
+				</aura:if>	
+			</aura:if>
+			
+		</div>
+	</div>
+</aura:component>

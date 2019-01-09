@@ -1,0 +1,75 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global"
+ controller="OfferPanelController">
+
+	<aura:attribute name="grade_info" type="object" />
+	<aura:attribute name="packing_info" type="object" />
+	<aura:attribute name="payment_info" type="object" />
+	<aura:attribute name="destination_info" type="object" />
+	<aura:attribute name="isClickSidebar" type="boolean" default="false" />
+	<aura:attribute name="open_info" type="boolean" default="false" />
+	<aura:handler name="init" value="{!this}" action="{!c.init}" />
+	<aura:handler name="onChangeFilter" event="c:OfferEvent" action="{!c.setUpInformation}" />
+
+	<div class="slds-grid slds-gutters slds-wrap">
+		<div class="{! v.isClickSidebar ?'ani-slide slds-col slds-medium-size_9-of-12 slds-size_1-of-1':'ani-slide slds-col slds-medium-size_12-of-12 slds-size_1-of-1'}">
+			<div id="main">
+				<div class="head">
+					<h3 class="header">OFFER PANEL</h3>
+					<lightning:button variant="neutral" onclick="{!c.onClickSideBar}">
+						<lightning:icon iconName="{! v.isClickSidebar ? 'utility:right' : 'utility:left'}" size="x-small" />
+					</lightning:button>
+				</div>
+
+				<hr class="hr" />
+				<c:offerList />
+				<div class="slds-list_horizontal slds-wrap slds-float_left" onclick="{!c.onOpenInfo}" style="cursor: pointer">
+					<div class="slds-align_absolute-center">
+						<lightning:icon iconName="{! v.open_info?'utility:down':'utility:right' }" size="xx-small" />
+						<h3 class="header"> INFORMATION</h3>
+					</div>
+				</div>
+				<hr class="hr" />
+				<br />
+				<aura:if isTrue="{!v.open_info}">
+					<div class="slds-grid slds-gutters slds-wrap">
+						<aura:if isTrue="{!v.isClickSidebar}">
+							<div class="slds-col slds-medium-size_2-of-4 slds-size_1-of-1">
+								<c:InfoGrade information_info="{!v.grade_info}" />
+							</div>
+							<div class="slds-col slds-medium-size_2-of-4 slds-size_1-of-1">
+								<c:InfoPacking information_info="{!v.packing_info}" />
+							</div>
+							<div class="slds-col slds-medium-size_2-of-4 slds-size_1-of-1">
+								<c:InfoPayment information_info="{!v.payment_info}" />
+							</div>
+							<div class="slds-col slds-medium-size_2-of-4 slds-size_1-of-1">
+								<c:InfoDestination information_info="{!v.destination_info}" />
+							</div>
+							<aura:set attribute="else">
+								<div class="slds-col slds-medium-size_1-of-4 slds-size_1-of-1">
+									<c:InfoGrade information_info="{!v.grade_info}" />
+								</div>
+								<div class="slds-col slds-medium-size_1-of-4 slds-size_1-of-1">
+									<c:InfoPacking information_info="{!v.packing_info}" />
+								</div>
+								<div class="slds-col slds-medium-size_1-of-4 slds-size_1-of-1">
+									<c:InfoPayment information_info="{!v.payment_info}" />
+								</div>
+								<div class="slds-col slds-medium-size_1-of-4 slds-size_1-of-1">
+									<c:InfoDestination information_info="{!v.destination_info}" />
+								</div>
+							</aura:set>
+						</aura:if>
+
+					</div>
+				</aura:if>
+			</div>
+		</div>
+
+		<div class="{! v.isClickSidebar ?'ani-slide sidebar slds-col slds-medium-size_3-of-12 slds-size_1-of-1':'ani-slide sidebar slds-col slide-hide slds-size_1-of-1'}">
+			<c:notificationList />
+		</div>
+
+	</div>
+
+</aura:component>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>User_Group__c</fullName>
+    <defaultValue>IF( $UserRole.Name  = &#39;NCE Manager&#39; || $UserRole.Name  = &#39;NCE Regional Managers&#39; || $UserRole.Name  = &#39;NCE Traders&#39;, &#39;NCE&#39;, &#39;Hevea Global&#39;)</defaultValue>
+    <externalId>false</externalId>
+    <label>User Group</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hevea Global</fullName>
+                <default>false</default>
+                <label>Hevea Global</label>
+            </value>
+            <value>
+                <fullName>NCE</fullName>
+                <default>false</default>
+                <label>NCE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,10 @@
+<aura:component controller="NTPController">
+
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+	<aura:handler name="destroy" value="{!this}" action="{!c.destroy}"/>
+	<aura:attribute name="TimeString" type="String" />
+	<aura:attribute name="DateString" type="String" />
+	<div class="clock">
+		{!v.DateString} &nbsp; {!v.TimeString}
+	</div>
+</aura:component>

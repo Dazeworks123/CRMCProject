@@ -1,0 +1,38 @@
+.THIS {
+}
+.THIS .logo_company{
+	max-width: 70px;
+    max-height: 50px;
+}
+.THIS .star-cursor{
+    cursor: pointer;
+}
+.THIS .btn-secondary{
+    background-color: #6B7c85;
+    color: white;
+    border-color: #6B7c85;
+    font-size: 10px;
+}
+
+.THIS .disable-opa{
+    opacity: 0.5;
+}
+
+.THIS .pull_btn{
+    line-height: 15px;
+    font-size: 10px
+}
+
+.THIS .trade_btn{
+    font-size: 10px
+}
+
+.THIS td:nth-child(12) {
+	border-right: 1px solid #ccc;
+} 
+.THIS td:nth-child(10) {
+	border-right: 1px solid #ccc;
+} 
+.THIS td:nth-child(9) {
+	border-left: 1px solid #ccc;
+}

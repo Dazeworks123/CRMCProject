@@ -1,0 +1,48 @@
+.THIS {
+	position: relative;
+}
+.THIS .header{
+	font-size: 20px;
+	font-weight: bold;
+}
+.THIS .hr
+{
+	margin: 0;
+}
+.THIS .head{
+	display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 48em)
+{
+	.THIS .slide-hide{
+		width: 0%;
+	    overflow: hidden;
+	    padding: 0;
+	    position: absolute;
+	    right: 0;
+	}
+
+	.THIS .sidebar {
+		height: 100%; 
+		overflow-x: hidden; 
+		position: absolute;
+		right: 0;
+	}	
+
+	.THIS .sidebar::-webkit-scrollbar {
+		display: none;
+	}	
+}
+
+.THIS .ani-slide
+{
+	transition: width 0.5s; 
+}
+
+
+.THIS .openbtn {
+	padding: 10px 15px;
+	border: none;
+}

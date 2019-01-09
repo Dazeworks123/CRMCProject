@@ -1,0 +1,18 @@
+<aura:component controller="NotificationController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+	<ltng:require scripts="https://js.pusher.com/4.3/pusher.min.js" afterScriptsLoaded="{!c.setUpPusher}" />
+	
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+	<aura:attribute name="notifyList" type="Object[]" />
+	<aura:attribute name="error" type="String" default="" />
+	<aura:if isTrue="{!v.error != ''}">
+		<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+		  <span class="slds-assistive-text">error</span>
+		  <h2>{!v.error}</h2>
+		</div>
+	</aura:if>
+	
+	<h3 class="header">NOTIFICATION</h3>
+	<aura:iteration var="notify" items="{!v.notifyList}" indexVar="indx">
+        <c:notificationItem notify="{!notify}" />
+    </aura:iteration>
+</aura:component>

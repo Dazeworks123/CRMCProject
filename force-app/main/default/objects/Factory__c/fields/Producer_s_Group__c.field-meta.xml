@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Producer_s_Group__c</fullName>
+    <externalId>false</externalId>
+    <label>Producer&#39;s Group</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hevea Global</fullName>
+                <default>false</default>
+                <label>Hevea Global</label>
+            </value>
+            <value>
+                <fullName>New Fountain</fullName>
+                <default>false</default>
+                <label>New Fountain</label>
+            </value>
+            <value>
+                <fullName>Asia Produce</fullName>
+                <default>false</default>
+                <label>Asia Produce</label>
+            </value>
+            <value>
+                <fullName>Kirana</fullName>
+                <default>false</default>
+                <label>Kirana</label>
+            </value>
+            <value>
+                <fullName>SPRING RESOURCE</fullName>
+                <default>false</default>
+                <label>SPRING RESOURCE</label>
+            </value>
+            <value>
+                <fullName>SG Global</fullName>
+                <default>false</default>
+                <label>SG Global</label>
+            </value>
+            <value>
+                <fullName>ABP</fullName>
+                <default>false</default>
+                <label>ABP</label>
+            </value>
+            <value>
+                <fullName>Sri Trang</fullName>
+                <default>false</default>
+                <label>Sri Trang</label>
+            </value>
+            <value>
+                <fullName>Madec</fullName>
+                <default>false</default>
+                <label>Madec</label>
+            </value>
+            <value>
+                <fullName>Wilson Global</fullName>
+                <default>false</default>
+                <label>Wilson Global</label>
+            </value>
+            <value>
+                <fullName>Von Bundit</fullName>
+                <default>false</default>
+                <label>Von Bundit</label>
+            </value>
+            <value>
+                <fullName>Thai Tech</fullName>
+                <default>false</default>
+                <label>Thai Tech</label>
+            </value>
+            <value>
+                <fullName>Chan Tong</fullName>
+                <default>false</default>
+                <label>Chan Tong</label>
+            </value>
+            <value>
+                <fullName>Rubber Net</fullName>
+                <default>false</default>
+                <label>Rubber Net</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

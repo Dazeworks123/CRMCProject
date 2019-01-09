@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Unit__c</fullName>
+    <externalId>false</externalId>
+    <label>Unit Price</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>USD/Tonne</fullName>
+                <default>true</default>
+                <label>USD/Tonne</label>
+            </value>
+            <value>
+                <fullName>US cents/Kg</fullName>
+                <default>false</default>
+                <label>US cents/Kg</label>
+            </value>
+            <value>
+                <fullName>RMB/Tonne</fullName>
+                <default>false</default>
+                <label>RMB/Tonne</label>
+            </value>
+            <value>
+                <fullName>EURO/Tonne</fullName>
+                <default>false</default>
+                <label>EURO/Tonne</label>
+            </value>
+            <value>
+                <fullName>MYR/Tonne</fullName>
+                <default>false</default>
+                <label>MYR/Tonne</label>
+            </value>
+            <value>
+                <fullName>IDR/Tonne</fullName>
+                <default>false</default>
+                <label>IDR/Tonne</label>
+            </value>
+            <value>
+                <fullName>THB/Tonne</fullName>
+                <default>false</default>
+                <label>THB/Tonne</label>
+            </value>
+            <value>
+                <fullName>US Cents per KG</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>US Cents per KG</label>
+            </value>
+            <value>
+                <fullName>US Doller per Ton</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>US Doller per Ton</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,28 @@
+<aura:component>
+	<aura:attribute name="notify" type="Object" />
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+
+	<aura:attribute name="date" type="String" />
+	<aura:attribute name="time" type="String" />
+	<article class="slds-card">
+	  <div class="slds-card__body slds-card__body_inner notify">
+	  	<div class="logo">
+	  		<img src="{!v.notify.CreatedBy.Contact.Account.Icon_URL__c}" class="logo_company"/>
+	  	</div>
+	  	<div class="detail-box">
+			<div class="label">
+				{!v.notify.CreatedBy.Name}
+			</div>
+			<div class="detail">
+				<div class="description">
+					{!v.notify.Quotation_Status__c} bid <ui:outputCurrency value="{!v.notify.Bid_Price__c }" currencySymbol=" "/> <br/> for <ui:outputCurrency value="{!v.notify.Bid_Volume__c}" currencySymbol=" "/>  mt
+				</div>
+				<div class="datetime">
+					{!v.time}<br/>{!v.date}
+				</div>
+			</div>
+	  	</div>
+	  </div>
+	</article>
+
+</aura:component>

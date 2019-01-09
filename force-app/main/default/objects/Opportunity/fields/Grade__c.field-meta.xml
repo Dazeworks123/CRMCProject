@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Grade__c</fullName>
+    <externalId>false</externalId>
+    <label>Rubber Grade</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>ADS XL</fullName>
+                <default>false</default>
+                <label>ADS XL</label>
+            </value>
+            <value>
+                <fullName>AFR10</fullName>
+                <default>false</default>
+                <label>AFR10</label>
+            </value>
+            <value>
+                <fullName>AFR5</fullName>
+                <default>false</default>
+                <label>AFR5</label>
+            </value>
+            <value>
+                <fullName>AFR L</fullName>
+                <default>false</default>
+                <label>AFR L</label>
+            </value>
+            <value>
+                <fullName>CBR 1066</fullName>
+                <default>false</default>
+                <label>CBR 1066</label>
+            </value>
+            <value>
+                <fullName>CBR 1240</fullName>
+                <default>false</default>
+                <label>CBR 1240</label>
+            </value>
+            <value>
+                <fullName>CHC10</fullName>
+                <default>false</default>
+                <label>CHC10</label>
+            </value>
+            <value>
+                <fullName>ENR</fullName>
+                <default>false</default>
+                <label>ENR</label>
+            </value>
+            <value>
+                <fullName>EVA 1066</fullName>
+                <default>false</default>
+                <label>EVA 1066</label>
+            </value>
+            <value>
+                <fullName>INR10</fullName>
+                <default>false</default>
+                <label>INR10</label>
+            </value>
+            <value>
+                <fullName>ISNR20</fullName>
+                <default>false</default>
+                <label>ISNR20</label>
+            </value>
+            <value>
+                <fullName>LAC10</fullName>
+                <default>false</default>
+                <label>LAC10</label>
+            </value>
+            <value>
+                <fullName>LATEX HA</fullName>
+                <default>false</default>
+                <label>LATEX HA</label>
+            </value>
+            <value>
+                <fullName>LATEX LA</fullName>
+                <default>false</default>
+                <label>LATEX LA</label>
+            </value>
+            <value>
+                <fullName>RSS1</fullName>
+                <default>false</default>
+                <label>RSS1</label>
+            </value>
+            <value>
+                <fullName>RSS3</fullName>
+                <default>false</default>
+                <label>RSS3</label>
+            </value>
+            <value>
+                <fullName>RSS3 SICOM</fullName>
+                <default>false</default>
+                <label>RSS3 SICOM</label>
+            </value>
+            <value>
+                <fullName>RSS3 TOCOM</fullName>
+                <default>false</default>
+                <label>RSS3 TOCOM</label>
+            </value>
+            <value>
+                <fullName>RSS4</fullName>
+                <default>false</default>
+                <label>RSS4</label>
+            </value>
+            <value>
+                <fullName>RSS5</fullName>
+                <default>false</default>
+                <label>RSS5</label>
+            </value>
+            <value>
+                <fullName>RSS CUTTING</fullName>
+                <default>false</default>
+                <label>RSS CUTTING</label>
+            </value>
+            <value>
+                <fullName>SBR 1502</fullName>
+                <default>false</default>
+                <label>SBR 1502</label>
+            </value>
+            <value>
+                <fullName>SBR 1712</fullName>
+                <default>false</default>
+                <label>SBR 1712</label>
+            </value>
+            <value>
+                <fullName>SCR5 SHFE</fullName>
+                <default>false</default>
+                <label>SCR5 SHFE</label>
+            </value>
+            <value>
+                <fullName>SGR10</fullName>
+                <default>false</default>
+                <label>SGR10</label>
+            </value>
+            <value>
+                <fullName>SHFE SCR5</fullName>
+                <default>false</default>
+                <label>SHFE SCR5</label>
+            </value>
+            <value>
+                <fullName>SIR10</fullName>
+                <default>false</default>
+                <label>SIR10</label>
+            </value>
+            <value>
+                <fullName>SIR 10 Mixture Rubber</fullName>
+                <default>false</default>
+                <label>SIR 10 Mixture Rubber</label>
+            </value>
+            <value>
+                <fullName>SIR10 VK</fullName>
+                <default>false</default>
+                <label>SIR10 VK</label>
+            </value>
+            <value>
+                <fullName>SIR20</fullName>
+                <default>false</default>
+                <label>SIR20</label>
+            </value>
+            <value>
+                <fullName>SIR20 APC</fullName>
+                <default>false</default>
+                <label>SIR20 APC</label>
+            </value>
+            <value>
+                <fullName>SIR 20C</fullName>
+                <default>false</default>
+                <label>SIR 20C</label>
+            </value>
+            <value>
+                <fullName>SIR 20 Mixture Rubber</fullName>
+                <default>false</default>
+                <label>SIR 20 Mixture Rubber</label>
+            </value>
+            <value>
+                <fullName>SIR 20UG</fullName>
+                <default>false</default>
+                <label>SIR 20UG</label>
+            </value>
+            <value>
+                <fullName>SIR20 VK</fullName>
+                <default>false</default>
+                <label>SIR20 VK</label>
+            </value>
+            <value>
+                <fullName>SIR 3L</fullName>
+                <default>false</default>
+                <label>SIR 3L</label>
+            </value>
+            <value>
+                <fullName>SIR5</fullName>
+                <default>false</default>
+                <label>SIR5</label>
+            </value>
+            <value>
+                <fullName>SIR CV50</fullName>
+                <default>false</default>
+                <label>SIR CV50</label>
+            </value>
+            <value>
+                <fullName>SIR CV60</fullName>
+                <default>false</default>
+                <label>SIR CV60</label>
+            </value>
+            <value>
+                <fullName>SKI 3</fullName>
+                <default>false</default>
+                <label>SKI 3</label>
+            </value>
+            <value>
+                <fullName>SKIM BLOCK</fullName>
+                <default>false</default>
+                <label>SKIM BLOCK</label>
+            </value>
+            <value>
+                <fullName>SMR10</fullName>
+                <default>false</default>
+                <label>SMR10</label>
+            </value>
+            <value>
+                <fullName>SMR10 CV</fullName>
+                <default>false</default>
+                <label>SMR10 CV</label>
+            </value>
+            <value>
+                <fullName>SMR 10 Mixture Rubber</fullName>
+                <default>false</default>
+                <label>SMR 10 Mixture Rubber</label>
+            </value>
+            <value>
+                <fullName>SMR20</fullName>
+                <default>false</default>
+                <label>SMR20</label>
+            </value>
+            <value>
+                <fullName>SMR20 CV</fullName>
+                <default>false</default>
+                <label>SMR20 CV</label>
+            </value>
+            <value>
+                <fullName>SMR 20 Mixture Rubber</fullName>
+                <default>false</default>
+                <label>SMR 20 Mixture Rubber</label>
+            </value>
+            <value>
+                <fullName>SMR5</fullName>
+                <default>false</default>
+                <label>SMR5</label>
+            </value>
+            <value>
+                <fullName>SMR CV50</fullName>
+                <default>false</default>
+                <label>SMR CV50</label>
+            </value>
+            <value>
+                <fullName>SMR CV60</fullName>
+                <default>false</default>
+                <label>SMR CV60</label>
+            </value>
+            <value>
+                <fullName>SMRGP</fullName>
+                <default>false</default>
+                <label>SMRGP</label>
+            </value>
+            <value>
+                <fullName>SMR L</fullName>
+                <default>false</default>
+                <label>SMR L</label>
+            </value>
+            <value>
+                <fullName>SPR10</fullName>
+                <default>false</default>
+                <label>SPR10</label>
+            </value>
+            <value>
+                <fullName>SPR20</fullName>
+                <default>false</default>
+                <label>SPR20</label>
+            </value>
+            <value>
+                <fullName>STR10</fullName>
+                <default>false</default>
+                <label>STR10</label>
+            </value>
+            <value>
+                <fullName>STR10 CV</fullName>
+                <default>false</default>
+                <label>STR10 CV</label>
+            </value>
+            <value>
+                <fullName>STR 10 Mixture Rubber</fullName>
+                <default>false</default>
+                <label>STR 10 Mixture Rubber</label>
+            </value>
+            <value>
+                <fullName>STR20</fullName>
+                <default>false</default>
+                <label>STR20</label>
+            </value>
+            <value>
+                <fullName>STR 20 Mixture Rubber</fullName>
+                <default>false</default>
+                <label>STR 20 Mixture Rubber</label>
+            </value>
+            <value>
+                <fullName>STR5</fullName>
+                <default>false</default>
+                <label>STR5</label>
+            </value>
+            <value>
+                <fullName>STR CV40</fullName>
+                <default>false</default>
+                <label>STR CV40</label>
+            </value>
+            <value>
+                <fullName>STR CV50</fullName>
+                <default>false</default>
+                <label>STR CV50</label>
+            </value>
+            <value>
+                <fullName>STR CV60</fullName>
+                <default>false</default>
+                <label>STR CV60</label>
+            </value>
+            <value>
+                <fullName>SVR10</fullName>
+                <default>false</default>
+                <label>SVR10</label>
+            </value>
+            <value>
+                <fullName>SVR10 CV60</fullName>
+                <default>false</default>
+                <label>SVR10 CV60</label>
+            </value>
+            <value>
+                <fullName>SVR20</fullName>
+                <default>false</default>
+                <label>SVR20</label>
+            </value>
+            <value>
+                <fullName>SVR 3L</fullName>
+                <default>false</default>
+                <label>SVR 3L</label>
+            </value>
+            <value>
+                <fullName>SVR5</fullName>
+                <default>false</default>
+                <label>SVR5</label>
+            </value>
+            <value>
+                <fullName>SVR CV50</fullName>
+                <default>false</default>
+                <label>SVR CV50</label>
+            </value>
+            <value>
+                <fullName>SVR CV60</fullName>
+                <default>false</default>
+                <label>SVR CV60</label>
+            </value>
+            <value>
+                <fullName>SVR L</fullName>
+                <default>false</default>
+                <label>SVR L</label>
+            </value>
+            <value>
+                <fullName>TPC 1X</fullName>
+                <default>false</default>
+                <label>TPC 1X</label>
+            </value>
+            <value>
+                <fullName>TSR20</fullName>
+                <default>false</default>
+                <label>TSR20</label>
+            </value>
+            <value>
+                <fullName>TSR20 SICOM</fullName>
+                <default>false</default>
+                <label>TSR20 SICOM</label>
+            </value>
+            <value>
+                <fullName>TSR 5L</fullName>
+                <default>false</default>
+                <label>TSR 5L</label>
+            </value>
+            <value>
+                <fullName>TSR L</fullName>
+                <default>false</default>
+                <label>TSR L</label>
+            </value>
+            <value>
+                <fullName>TSR WF</fullName>
+                <default>false</default>
+                <label>TSR WF</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

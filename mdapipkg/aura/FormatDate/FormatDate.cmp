@@ -1,0 +1,6 @@
+<aura:component>
+        <aura:attribute name="date" type="Date"/>
+        <aura:attribute name="date_format" type="Date"/>
+        <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+        {!v.date_format}
+</aura:component>

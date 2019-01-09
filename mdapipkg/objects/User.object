@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Company__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Company</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Price_Limit__c</fullName>
+        <externalId>false</externalId>
+        <label>Price Limit</label>
+        <relationshipName>price_limit</relationshipName>
+        <restrictedAdminField>false</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>User_Group__c</fullName>
+        <defaultValue>IF( $UserRole.Name  = &apos;NCE Manager&apos; || $UserRole.Name  = &apos;NCE Regional Managers&apos; || $UserRole.Name  = &apos;NCE Traders&apos;, &apos;NCE&apos;, &apos;Hevea Global&apos;)</defaultValue>
+        <externalId>false</externalId>
+        <label>User Group</label>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hevea Global</fullName>
+                    <default>false</default>
+                    <label>Hevea Global</label>
+                </value>
+                <value>
+                    <fullName>NCE</fullName>
+                    <default>false</default>
+                    <label>NCE</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>User_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Contact.Account.RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+</CustomObject>

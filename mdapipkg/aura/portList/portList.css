@@ -1,0 +1,38 @@
+.THIS{
+    
+}
+
+.THIS .pq-grid-header-table {
+    background: rgba(107, 124, 133, 1);
+}
+.THIS .pq-grid-col:hover {
+    background: rgba(107, 124, 133, 0.7);
+}
+.THIS .ui-state-active {
+    background: rgba(107, 124, 133, 1) !important;
+}
+.THIS .ui-state-active,.THIS  .ui-widget-content .ui-state-active,.THIS  .ui-widget-header .ui-state-active
+{
+	color: #fff;
+}
+.THIS .pq-grid-col,.THIS  .pq-grid-number-col
+{
+	color: #fff;	
+}
+
+.THIS .pq-grid-top
+{
+	display: none;	
+}
+.THIS div.pq-theme
+{
+	border: none;	
+}
+
+.THIS .data-draft{
+    color: #6B7C85;
+}
+
+.THIS .data-trade{
+    color: #0077B3;
+}

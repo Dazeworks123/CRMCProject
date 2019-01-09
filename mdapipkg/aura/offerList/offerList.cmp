@@ -1,0 +1,121 @@
+<aura:component controller="OfferPanelController">
+	<aura:attribute name="confirm_popup_info" type="Object" />
+	<aura:attribute name="data_list" type="Object" />
+	<aura:attribute name="view" type="String" default="factory" />
+	<aura:attribute name="onLoading" type="Boolean" default="true" />
+
+	<aura:attribute name="isEdited" type="Boolean" default="false" />
+	<aura:attribute name="warningRefresh" type="Boolean" default="false" />
+
+	<aura:attribute name="isConfirm" type="Boolean" default="false" />
+	<aura:attribute name="saveStatus" type="String" />
+
+	<aura:attribute name="filter_info" type="Object" />
+	<aura:attribute name="ConsumerList" type="Object[]" />	
+	<aura:attribute name="CountryList" type="Object[]" />	
+	<aura:attribute name="DateList" type="Object" />
+	<aura:attribute name="ConsumerSelected" type="String"  />
+	<aura:attribute name="CountrySelected" type="String"  />
+	<aura:attribute name="DateSelected" type="Date" />
+	<aura:attribute name="error" type="String" default="" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+	<aura:handler name="onConfirm" event="c:ConfirmEvent" action="{!c.onConfirm}"/>
+	<aura:registerEvent name="onChangeFilter" type="c:OfferEvent"/>
+	<aura:registerEvent name="appReloadEvent" type="c:ReloadEvent"/>
+
+	<ltng:require scripts="https://js.pusher.com/4.3/pusher.min.js" afterScriptsLoaded="{!c.setUpPusher}" />
+
+	<div>
+		<c:Confirm 
+			open="{!v.confirm_popup_info.open}" 
+			eventName="{!v.confirm_popup_info.eventName}" 
+			description="{!v.confirm_popup_info.description}" />
+		<div class="slds-grid slds-gutters slds-wrap">
+		  <div class="slds-col slds-medium-size_1-of-2 slds-size_1-of-1">
+		    <div class="slds-grid slds-gutters slds-wrap">
+			  <div class="slds-col slds-medium-size_1-of-2 slds-size_1-of-1">
+		  	 	<lightning:select value="{!v.ConsumerSelected}" label="Customer selected :" onchange="{!c.changeConsumer}">
+                    <aura:iteration items="{!v.ConsumerList}" var="option">
+                        <option value="{!option.value}" selected="{! v.ConsumerSelected == option.value}">{!option.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+			  </div>
+			  <div class="slds-col slds-medium-size_1-of-2 slds-size_1-of-1">
+			  	<lightning:select value="{!v.CountrySelected}" label="Country selected :" onchange="{!c.changeCountry}">
+                    <aura:iteration items="{!v.CountryList}" var="option">
+                        <option value="{!option.value}" selected="{! v.CountrySelected == option.value}">{!option.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+			  </div>
+			</div>
+		  </div>
+		  <div class="slds-col slds-medium-size_1-of-2 slds-size_1-of-1 btn-right">
+		  	
+		  	<aura:if isTrue="{! v.view =='port'}">
+		  		<lightning:button variant="brand" onclick="{!c.factoryView}">
+					FACTORY VIEW
+				</lightning:button>
+		  	</aura:if>
+
+		  	<aura:if isTrue="{! v.view =='factory'}">
+		  		<lightning:button variant="brand" onclick="{!c.portView}">
+					PORT VIEW
+				</lightning:button>
+		  	</aura:if>
+
+		  	<lightning:button variant="brand" onclick="{!c.pullAllOffer}">
+		  		PULL ALL OFFERS
+		  	</lightning:button>
+		  </div>
+		</div>
+		<br/>
+		<div>
+			<aura:if isTrue="{!v.error != ''}">
+				<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+				  <span class="slds-assistive-text">error</span>
+				  <h2>{!v.error}</h2>
+				</div>
+			</aura:if>
+
+			<aura:if isTrue="{!v.warningRefresh}">
+			    <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert">
+				  <span class="slds-assistive-text">warning</span>
+				  <h2>
+				  	Already has new data. please save or <a href="javascript:void(0)" onclick="{!c.refreshData}"> refresh</a>
+				  </h2>
+				</div>
+			</aura:if>
+			
+			<aura:if isTrue="{! v.onLoading}">
+				<div class="box-loading-table">
+					<c:LoadingBar/>
+				</div>
+				<aura:set attribute="else">
+					<aura:if isTrue="{! v.view =='port'}">
+				  		<c:portList port_list="{!v.data_list}"/>
+				  	</aura:if>
+				  	<aura:if isTrue="{! v.view =='factory'}">
+				  		<c:factoryList factory_list="{!v.data_list}" isEdited="{!v.isEdited}"/>
+				  	</aura:if>
+
+				  	<div class="slds-grid slds-gutters slds-wrap">
+		  				<div class="slds-col slds-medium-size_1-of-2 slds-size_1-of-1">
+		  					<lightning:button class="btn-secondary" onclick="{!c.last6Month}">Last 6 Month</lightning:button>
+		  				</div>
+		  				<div class="slds-col slds-medium-size_1-of-2 slds-size_1-of-1 txt-right">
+		  					<lightning:button class="btn-secondary" onclick="{!c.next6Month}">Next 6 Month</lightning:button>
+		  				</div>
+		  			</div>
+
+
+				</aura:set>
+			</aura:if>		
+
+		</div>
+		<div class="btn-right">
+			<lightning:button variant="brand" onclick="{!c.saveList}">Save</lightning:button>
+			<lightning:button variant="brand" onclick="{!c.postToCustomer}">POST TO CUSTOMER</lightning:button>
+		</div>
+	</div>
+</aura:component>

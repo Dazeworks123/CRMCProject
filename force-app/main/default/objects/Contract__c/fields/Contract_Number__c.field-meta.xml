@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Number__c</fullName>
+    <description>SAP Contract Number created on SAP.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>SAP Contract Number</inlineHelpText>
+    <label>Consumer Contract number</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

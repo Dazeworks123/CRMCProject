@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+	<aura:attribute name="footer_text" type="String" default="COPYRIGHT &copy; 2018. HALCYON AGRI. ALL RIGHTS RESERVED"/>
+	<footer role="contentinfo" >
+	  <!-- LAYOUT GRID -->
+	  <div class="slds-grid slds-wrap">
+	    <div class="slds-medium-size_8-of-12 slds-size_1-of-1 footerLeft">{!v.footer_text}</div>
+	    <div class="slds-medium-size_4-of-12 slds-size_1-of-1 footerRight">
+	    	<div class="clock">
+	    		<c:footerClock/>
+	    	</div>
+	    </div>
+	  </div>
+	  <!-- / LAYOUT GRID -->
+	</footer>
+
+</aura:component>

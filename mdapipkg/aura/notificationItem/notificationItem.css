@@ -1,0 +1,57 @@
+.THIS .logo_company
+{
+    max-width: 70px;
+    max-height: 50px;
+  	margin: auto;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;  
+}
+
+.THIS .start
+{
+	color: yellow;
+}
+.THIS .notify,.THIS .detail
+{
+	display: flex;
+}
+.THIS .detail
+{
+    justify-content: space-between
+}
+.THIS .detail-box
+{
+    width: 100%;
+}
+.THIS .notify {
+    padding: 10px;
+    min-height: 80px;
+    margin: 0px;
+}
+.THIS .logo {
+    text-align: center;
+    min-width: 80px;
+    border-right: 2px solid #d4d4d4;
+    margin-right: 3px;
+    display: table-cell; 
+    vertical-align: middle;
+    position:relative;
+}
+.THIS .label {
+    min-height: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+.THIS .datetime {
+    text-align: right;
+    font-size: 12px;
+}
+.THIS .description {
+    font-size: 12px;
+}
+.THIS .fade-bg{
+    background-color: #eee;
+}

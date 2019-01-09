@@ -1,0 +1,21 @@
+.THIS {
+}
+.THIS .header{
+	font-size: 18px;
+	font-weight: bold;
+}
+.THIS .hr
+{
+	margin: 0;
+}
+.THIS .box-loading-table{
+	padding: 130px;
+}
+
+.THIS .action-container{
+	background-color: #ecebea;
+}
+
+.THIS .box-loading-table{
+	min-height: 50vh
+}

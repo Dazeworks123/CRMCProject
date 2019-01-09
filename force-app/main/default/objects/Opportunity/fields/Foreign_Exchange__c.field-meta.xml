@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Foreign_Exchange__c</fullName>
+    <externalId>false</externalId>
+    <label>Foreign Exchange</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>USD/MYR</fullName>
+                <default>false</default>
+                <label>USD/MYR</label>
+            </value>
+            <value>
+                <fullName>USD/SGD</fullName>
+                <default>false</default>
+                <label>USD/SGD</label>
+            </value>
+            <value>
+                <fullName>USD/IDR</fullName>
+                <default>false</default>
+                <label>USD/IDR</label>
+            </value>
+            <value>
+                <fullName>USD/EUR</fullName>
+                <default>false</default>
+                <label>USD/EUR</label>
+            </value>
+            <value>
+                <fullName>USD/YEN</fullName>
+                <default>false</default>
+                <label>USD/YEN</label>
+            </value>
+            <value>
+                <fullName>USD/RMB</fullName>
+                <default>false</default>
+                <label>USD/RMB</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

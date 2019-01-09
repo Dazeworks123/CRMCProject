@@ -1,0 +1,26 @@
+<aura:component>
+	<aura:attribute name="factory_list" type="Object" />
+	<aura:attribute name="isEdited" type="Boolean" default="false" />
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+	<aura:handler event="c:ReloadEvent" action="{!c.reloadData}" />
+
+	<ltng:require 
+	styles="{!join(',',
+	$Resource.jquery + '/jquery/jquery-ui.css',
+	$Resource.pqgrid + '/pqgrid.min.css',
+	$Resource.pqgrid + '/pqgrid.ui.min.css',
+	$Resource.pqgrid + '/themes/bootstrap/pqgrid.css'
+	)}" 
+	scripts="{!join(',',
+	$Resource.jquery + '/jquery/jquery.min.js',
+    $Resource.jquery + '/jquery/jquery-ui.min.js',
+    $Resource.pqgrid + '/pqgrid.min.js',
+    $Resource.pqgrid + '/localize/pq-localize-en.js',
+    $Resource.pqgrid + '/touch-punch/touch-punch.min.js',
+    $Resource.pqgrid + '/jsZip-2.5.0/jszip.min.js'
+    )}"
+    afterScriptsLoaded="{!c.loadScript}" 
+    />
+
+    <div id="grid_json"></div>
+</aura:component>

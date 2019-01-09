@@ -1,0 +1,14 @@
+.THIS {
+}
+.THIS .header{
+	font-size: 18px;
+	font-weight: bold;
+}
+.THIS .hr
+{
+	margin: 0;
+}
+
+.THIS .box-loading-table{
+	min-height: 50vh
+}

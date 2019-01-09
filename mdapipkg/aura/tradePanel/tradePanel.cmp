@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+	<div class="slds-grid slds-gutters slds-wrap">
+		<div class="slds-col slds-size_1-of-1">
+			<h3 class="header">TRADE PANEL</h3>
+		    <hr class="hr" />
+	    	<br />
+	    	<c:pqgrid_sample/>
+		</div>
+	</div>
+
+</aura:component>

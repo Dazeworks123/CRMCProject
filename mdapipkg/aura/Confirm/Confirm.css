@@ -1,0 +1,16 @@
+.THIS {
+}
+
+
+.THIS.confirm_popup .slds-modal__content {
+    max-height: 350px !important;
+    text-align: left;
+}
+
+.THIS .slds-modal__header{
+    background-color: #0077B3;
+    color: white;
+}
+.THIS .btn-cancel{
+    color: #0077B3;
+}

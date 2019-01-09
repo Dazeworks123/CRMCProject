@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Packing__c</fullName>
+    <externalId>false</externalId>
+    <label>Packing</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Shrinkwrapped</fullName>
+                <default>false</default>
+                <label>Shrinkwrapped</label>
+            </value>
+            <value>
+                <fullName>Bulk</fullName>
+                <default>false</default>
+                <label>Bulk</label>
+            </value>
+            <value>
+                <fullName>Disposable Plastic Pallet</fullName>
+                <default>false</default>
+                <label>Disposable Plastic Pallet</label>
+            </value>
+            <value>
+                <fullName>Disposal Metal Pallet</fullName>
+                <default>false</default>
+                <label>Disposal Metal Pallet</label>
+            </value>
+            <value>
+                <fullName>Drum</fullName>
+                <default>false</default>
+                <label>Drum</label>
+            </value>
+            <value>
+                <fullName>Flexi Bag</fullName>
+                <default>false</default>
+                <label>Flexi Bag</label>
+            </value>
+            <value>
+                <fullName>Friendly Pack</fullName>
+                <default>false</default>
+                <label>Friendly Pack</label>
+            </value>
+            <value>
+                <fullName>Great Wall</fullName>
+                <default>false</default>
+                <label>Great Wall</label>
+            </value>
+            <value>
+                <fullName>Loose Bale</fullName>
+                <default>false</default>
+                <label>Loose Bale</label>
+            </value>
+            <value>
+                <fullName>Metal Box</fullName>
+                <default>false</default>
+                <label>Metal Box</label>
+            </value>
+            <value>
+                <fullName>Slip Tray</fullName>
+                <default>false</default>
+                <label>Slip Tray</label>
+            </value>
+            <value>
+                <fullName>Tank Container</fullName>
+                <default>false</default>
+                <label>Tank Container</label>
+            </value>
+            <value>
+                <fullName>Wooden Crate</fullName>
+                <default>false</default>
+                <label>Wooden Crate</label>
+            </value>
+            <value>
+                <fullName>Wooden Pallet</fullName>
+                <default>false</default>
+                <label>Wooden Pallet</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

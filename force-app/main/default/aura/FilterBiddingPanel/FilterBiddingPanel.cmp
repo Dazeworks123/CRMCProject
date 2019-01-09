@@ -1,0 +1,180 @@
+<aura:component controller="BiddingPanelController">
+    <aura:attribute name="filter_info" type="Object" />
+    <aura:attribute name="data_filter" type="Object" />
+    <aura:attribute name="onLoadingProductSelection" type="Boolean" />
+    <aura:attribute name="progress" type="Integer" default="0" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:registerEvent name="filter" type="c:BiddingEvent" />
+
+    <div class="{!v.onLoadingProductSelection ?  '' : 'slds-hidden'}">
+        <c:LoadingBar />
+    </div>
+
+    <div class="slds-grid">
+
+        <div class="slds-col slds-size_6-of-12 filter-container">
+
+            <div class="slds-box slds-theme_shade filter-group">
+
+                <h4 class="filter-header">Filter: </h4>
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_5-of-6">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control selection-container">
+                                <div class="slds-form_horizontal">
+                                    <lightning:select value="{!v.data_filter.destination}" label="Destination:"
+                                        onchange="{!c.onChangeDestination}">
+                                        <aura:iteration items="{!v.filter_info.filter.destination}" var="option">
+                                            <option value="{!option.value}" selected="{! v.data_filter.destination == option.value}">{!option.text}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_5-of-6">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control selection-container">
+                                <div class="slds-form_horizontal">
+                                    <lightning:select value="{!v.data_filter.country}" label="Country:"
+                                        onchange="{!c.onChangeCountry}">
+                                        <aura:iteration items="{!v.filter_info.filter.country}" var="option">
+                                            <option value="{!option.value}" selected="{!v.data_filter.country == option.value}">{!option.text}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_5-of-6">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control selection-container">
+                                <div class="slds-form_horizontal">
+                                    <lightning:select value="{!v.data_filter.port}" label="Port:" onchange="{!c.onChangeProducer}">
+                                        <aura:iteration items="{!v.filter_info.filter.port}" var="option">
+                                            <option value="{!option.value}" selected="{!v.data_filter.port == option.value}">{!option.text}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_5-of-6">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control selection-container">
+                                <div class="slds-form_horizontal">
+                                    <lightning:select value="{!v.data_filter.producer}" label="Producer:" onchange="{!c.onChangeFilter}">
+                                        <aura:iteration items="{!v.filter_info.filter.producer}" var="option">
+                                            <option value="{!option.value}" selected="{!v.data_filter.producer == option.value}">{!option.text}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="slds-col slds-size_6-of-12 filter-container">
+
+            <div class="slds-box slds-theme_shade filter-group">
+
+                <h4 class="filter-header">Product selection: </h4>
+
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_5-of-6">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control selection-container">
+                                <div class="slds-form_horizontal">
+                                    <lightning:select value="{!v.data_filter.grade}" label="Grade:" onchange="{!c.onChangeGrade}">
+                                        <aura:iteration items="{!v.filter_info.product.grade}" var="option">
+                                            <option value="{!option.value}" selected="{!v.data_filter.grade == option.value}">{!option.text}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_5-of-6">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control selection-container">
+                                <div class="slds-form_horizontal">
+                                    <lightning:select value="{!v.data_filter.packing}" label="Packing:"
+                                        onchange="{!c.onChangeProductSelect}">
+                                        <aura:iteration items="{!v.filter_info.product.packing}" var="option">
+                                            <option value="{!option.value}" selected="{!v.data_filter.packing == option.value}">{!option.text}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_5-of-6">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control selection-container">
+                                <div class="slds-form_horizontal">
+                                    <lightning:select value="{!v.data_filter.payment}" label="Payment:"
+                                        onchange="{!c.onChangeProductSelect}">
+                                        <aura:iteration items="{!v.filter_info.product.payment}" var="option">
+                                            <option value="{!option.value}" selected="{!v.data_filter.payment == option.value}">{!option.text}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_5-of-6">
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control selection-container">
+                                <div class="slds-form_horizontal">
+                                    <lightning:select value="{!v.data_filter.shipping}" label="Shipping:"
+                                        onchange="{!c.onChangeProductSelect}">
+                                        <aura:iteration items="{!v.filter_info.product.shipping}" var="option">
+                                            <option value="{!option.value}" selected="{!v.data_filter.shipping == option.value}">{!option.text}</option>
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="slds-float_right slds-p-top_medium">
+                <button class="slds-button slds-button_brand" onclick="{!c.onSubmit}">Submit</button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</aura:component>

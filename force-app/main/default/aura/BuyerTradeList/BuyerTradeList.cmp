@@ -1,0 +1,289 @@
+<aura:component>
+	<aura:attribute name="sort_info" type="object" default="{columns:'',type:''}" />
+	<aura:attribute name="trade_list" type="object[]" />
+	<aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+	<aura:handler name="onConfirm" event="c:ConfirmEvent" action="{!c.onPopupConfirm}" />
+	<aura:registerEvent name="onChangeSort" type="c:SortEvent" />
+
+	<!-- import js ของ sticky header -->
+	<ltng:require scripts="{!join(',',
+		$Resource.jquery + '/jquery/jquery.min.js',
+		$Resource.throttle,
+		$Resource.stickyheader
+	)}"
+	 afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+
+	<div>
+		<h4 class="header">Open Bids</h4>
+		<table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal open-table" style="table-layout: fixed; width: 100%">
+			<!-- ปรับ ความกว้างของแต่ละ column ของทั้ง2ตารางให้เท่ากันครับ -->
+			<thead>
+				<tr class="slds-line-height_reset">
+					<th class="slds-text-title_caps" scope="col">&nbsp;</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-truncate" title="ICON">ICON</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Seller__r.Name" title="NAME">NAME</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Seller__r.Name'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Factory__r.Name" title="FACTORY">FACTORY</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Factory__r.Name'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Factory_Symbol__c" title="SYMBOL">SYMBOL</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Factory_Symbol__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Month__c" title="MONTH">MONTH</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Month__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Quotation_Status__c" title="STATUS">STATUS</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Quotation_Status__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Grade__r.Name" title="GRADE">GRADE</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Grade__r.Name'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Bid_Volume__c" title="ASK">BID VOL</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Bid_Volume__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Bid_Price__c" title="BID">BID</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Bid_Price__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Ask_Price__c" title="VOL">ASK</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Ask_Price__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Ask_Volume__c" title="VOL">ASK VOL</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Ask_Volume__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="LastModifiedDate" title="TIME">TIME</div>
+							<aura:if isTrue="{!v.sort_info.columns =='LastModifiedDate'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- ตรงนี้ filter เพิ่มให้ไม่showตัว rejected ด้วยครับ -->
+				<aura:iteration var="row" items="{!v.trade_list}">
+					<aura:if isTrue="{! !( and(row.Quotation_Status__c == 'Done Deal', row.Favorite_Consumer__c == false) ) }">
+						<c:BuyerTradeListItem trade_item="{!row}" />
+					</aura:if>
+				</aura:iteration>
+
+				<!-- <aura:if isTrue="{!v.trade_list.length>0}">
+				<tr class="tr-close">
+					<td colspan="14" class="td-close" > Close Bid</td>
+				</tr>
+			</aura:if> ซ้ำกับอันล่าง-->
+
+				<!-- <aura:iteration var="row" items="{!v.trade_list}" indexVar="no">
+				<aura:if isTrue="{! no == 0}">
+					<tr class="tr-close">
+						<td colspan="14" class="td-close" > Closed Bids</td>
+					</tr>
+				</aura:if>
+				<aura:if isTrue="{! and(row.Quotation_Status__c == 'Done Deal',row.Favorite_Consumer__c == false) }">
+					<c:BuyerTradeListItem trade_item="{!row}" />
+				</aura:if>
+			</aura:iteration> -->
+
+			</tbody>
+		</table>
+		<br />
+
+		<!-- ผมแยกเป็น 2 tables นะครับ -->
+		<h4 class="header">Closed Bids</h4>
+		<table class="slds-table slds-table_bordered slds-max-medium-table_stacked-horizontal closed-table" style="table-layout: fixed; width: 100%">
+			<!-- ปรับ ความกว้างของแต่ละ column ของทั้ง2ตารางให้เท่ากันครับ -->
+			<thead>
+				<tr class="slds-line-height_reset">
+					<th class="slds-text-title_caps" scope="col">&nbsp;</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-truncate" title="ICON">ICON</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Seller__r.Name" title="NAME">NAME</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Seller__r.Name'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Factory__r.Name" title="FACTORY">FACTORY</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Factory__r.Name'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Factory_Symbol__c" title="SYMBOL">SYMBOL</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Factory_Symbol__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Month__c" title="MONTH">MONTH</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Month__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Quotation_Status__c" title="STATUS">STATUS</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Quotation_Status__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Grade__r.Name" title="GRADE">GRADE</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Grade__r.Name'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Bid_Volume__c" title="ASK">BID VOL</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Bid_Volume__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Bid_Price__c" title="BID">BID</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Bid_Price__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Ask_Price__c" title="VOL">ASK</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Ask_Price__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="Ask_Volume__c" title="VOL">ASK VOL</div>
+							<aura:if isTrue="{!v.sort_info.columns =='Ask_Volume__c'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">
+						<div class="slds-list_horizontal">
+							<div class="slds-truncate sort" onclick="{!c.sortClick}" data-field="LastModifiedDate" title="TIME">TIME</div>
+							<aura:if isTrue="{!v.sort_info.columns =='LastModifiedDate'}">
+								<lightning:icon iconName="{! v.sort_info.type=='ASC'?'utility:up':(v.sort_info.type=='DESC'?'utility:down':'') }"
+								 size="xx-small" />
+							</aura:if>
+						</div>
+					</th>
+					<th class="slds-text-title_caps" scope="col">&nbsp;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- ตรงนี้ filter เพิ่มให้showตัว rejected ด้วยครับ -->
+				<aura:iteration var="row" items="{!v.trade_list}">
+					<aura:if isTrue="{! ( and(row.Quotation_Status__c == 'Done Deal',row.Favorite_Consumer__c == false) ) }">
+						<c:BuyerTradeListItem trade_item="{!row}" />
+					</aura:if>
+				</aura:iteration>
+
+				<!-- <aura:if isTrue="{!v.trade_list.length>0}">
+					<tr class="tr-close">
+						<td colspan="14" class="td-close" > Close Bid</td>
+					</tr>
+				</aura:if> ซ้ำกับอันล่าง-->
+
+
+			</tbody>
+		</table>
+	</div>
+
+</aura:component>

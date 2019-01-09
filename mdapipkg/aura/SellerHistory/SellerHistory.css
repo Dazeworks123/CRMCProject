@@ -1,0 +1,44 @@
+.THIS .quote-field{
+    white-space: normal;
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+.THIS .quote-field-container{
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.THIS .list_container{
+    margin-bottom: 50px;
+}
+.THIS .slds-modal__header{
+    background-color: #0077B3;
+    color: white;
+}
+.THIS .header{
+    font-size: 18px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.THIS table{
+    table-layout: fixed;
+    width: 100%
+}
+
+.THIS th:nth-child(1){
+    width: 4%;
+}
+
+.THIS th:nth-child(2){
+    width: 12%;
+}
+
+.THIS th:nth-child(9){
+    width: 33%;
+}
+.THIS .slds-truncate{
+    word-wrap: break-word;
+    white-space: normal;
+}

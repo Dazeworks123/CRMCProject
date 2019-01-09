@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT">
+	<aura:attribute name="columns" type="String"/>
+	<aura:attribute name="type" type="String"/>
+</aura:event>

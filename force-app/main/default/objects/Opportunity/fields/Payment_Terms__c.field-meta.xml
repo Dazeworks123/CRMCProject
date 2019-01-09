@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Terms__c</fullName>
+    <externalId>false</externalId>
+    <label>Payment Terms</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cash Against Documents</fullName>
+                <default>false</default>
+                <label>Cash Against Documents</label>
+            </value>
+            <value>
+                <fullName>TT Against Faxed Copy Dcuments</fullName>
+                <default>false</default>
+                <label>TT Against Faxed Copy Dcuments</label>
+            </value>
+            <value>
+                <fullName>LC at Sight</fullName>
+                <default>false</default>
+                <label>LC at Sight</label>
+            </value>
+            <value>
+                <fullName>TT 90 Days from BL Date</fullName>
+                <default>false</default>
+                <label>TT 90 Days from BL Date</label>
+            </value>
+            <value>
+                <fullName>CAD within 5 Working Days</fullName>
+                <default>false</default>
+                <label>CAD within 5 Working Days</label>
+            </value>
+            <value>
+                <fullName>TT 30 Days from BL Date</fullName>
+                <default>false</default>
+                <label>TT 30 Days from BL Date</label>
+            </value>
+            <value>
+                <fullName>10% Prepayment; 90% by DP Sight through Bank</fullName>
+                <default>false</default>
+                <label>10% Prepayment; 90% by DP Sight through Bank</label>
+            </value>
+            <value>
+                <fullName>10% Prepayment; 90% TT upon arrival of Shipment</fullName>
+                <default>false</default>
+                <label>10% Prepayment; 90% TT upon arrival of Shipment</label>
+            </value>
+            <value>
+                <fullName>20% Prepayment, 80% Against Faxed Copy  Documents</fullName>
+                <default>false</default>
+                <label>20% Prepayment, 80% Against Faxed Copy  Documents</label>
+            </value>
+            <value>
+                <fullName>20% prepayment, 80% upon receipt of Origional Documents</fullName>
+                <default>false</default>
+                <label>20% prepayment, 80% upon receipt of Origional Documents</label>
+            </value>
+            <value>
+                <fullName>20% Prepayment; 80% Balance 1 Week before vessel arrival</fullName>
+                <default>false</default>
+                <label>20% Prepayment; 80% Balance 1 Week before vessel arrival</label>
+            </value>
+            <value>
+                <fullName>30% against documents, Balance on Arrival</fullName>
+                <default>false</default>
+                <label>30% against documents, Balance on Arrival</label>
+            </value>
+            <value>
+                <fullName>30% Against presentation of Original Documents; Balance upon arrival,Weight/DRC</fullName>
+                <default>false</default>
+                <label>30% Against presentation of Original Documents; Balance upon arrival,Weight/DRC</label>
+            </value>
+            <value>
+                <fullName>30% Prepyt Upon Cont Date, 70% TT against Faxed Documents</fullName>
+                <default>false</default>
+                <label>30% Prepyt Upon Cont Date, 70% TT against Faxed Documents</label>
+            </value>
+            <value>
+                <fullName>50% Against Documents, Balance due at Delivery</fullName>
+                <default>false</default>
+                <label>50% Against Documents, Balance due at Delivery</label>
+            </value>
+            <value>
+                <fullName>50% in Advance; Bal 50% against faxed documents</fullName>
+                <default>false</default>
+                <label>50% in Advance; Bal 50% against faxed documents</label>
+            </value>
+            <value>
+                <fullName>70% in Advance Against Faxed Copy Docus, 30%  After Goods Received</fullName>
+                <default>false</default>
+                <label>70% in Advance Against Faxed Copy Docus, 30%  After Goods Received</label>
+            </value>
+            <value>
+                <fullName>100% Prepayment prompt after contract Date</fullName>
+                <default>false</default>
+                <label>100% Prepayment prompt after contract Date</label>
+            </value>
+            <value>
+                <fullName>100% Prepayment 1 Week before Shipment</fullName>
+                <default>false</default>
+                <label>100% Prepayment 1 Week before Shipment</label>
+            </value>
+            <value>
+                <fullName>Advance Payment  (TT in Advance)</fullName>
+                <default>false</default>
+                <label>Advance Payment  (TT in Advance)</label>
+            </value>
+            <value>
+                <fullName>CAD upon Vessel Arrival</fullName>
+                <default>false</default>
+                <label>CAD upon Vessel Arrival</label>
+            </value>
+            <value>
+                <fullName>CAD within  3 Days</fullName>
+                <default>false</default>
+                <label>CAD within  3 Days</label>
+            </value>
+            <value>
+                <fullName>Cash Against Documents  7 Days</fullName>
+                <default>false</default>
+                <label>Cash Against Documents  7 Days</label>
+            </value>
+            <value>
+                <fullName>DAP 90 Days from BL Date</fullName>
+                <default>false</default>
+                <label>DAP 90 Days from BL Date</label>
+            </value>
+            <value>
+                <fullName>DP at Sight</fullName>
+                <default>false</default>
+                <label>DP at Sight</label>
+            </value>
+            <value>
+                <fullName>LC 60 Days from BL Date</fullName>
+                <default>false</default>
+                <label>LC 60 Days from BL Date</label>
+            </value>
+            <value>
+                <fullName>LC 90 Days from BL Date</fullName>
+                <default>false</default>
+                <label>LC 90 Days from BL Date</label>
+            </value>
+            <value>
+                <fullName>LC Sight Within 5 Working Days After Contract Date</fullName>
+                <default>false</default>
+                <label>LC Sight Within 5 Working Days After Contract Date</label>
+            </value>
+            <value>
+                <fullName>Prompt Payment</fullName>
+                <default>false</default>
+                <label>Prompt Payment</label>
+            </value>
+            <value>
+                <fullName>Telex Release Original BL</fullName>
+                <default>false</default>
+                <label>Telex Release Original BL</label>
+            </value>
+            <value>
+                <fullName>TT 2 Days after receipt  of goods</fullName>
+                <default>false</default>
+                <label>TT 2 Days after receipt  of goods</label>
+            </value>
+            <value>
+                <fullName>TT 2 Days from Presentation of Documents</fullName>
+                <default>false</default>
+                <label>TT 2 Days from Presentation of Documents</label>
+            </value>
+            <value>
+                <fullName>TT 7 Days from B/L Date of Mother Vessel</fullName>
+                <default>false</default>
+                <label>TT 7 Days from B/L Date of Mother Vessel</label>
+            </value>
+            <value>
+                <fullName>TT 10 Days After Delivery</fullName>
+                <default>false</default>
+                <label>TT 10 Days After Delivery</label>
+            </value>
+            <value>
+                <fullName>TT 14 Days from Date of Delivery</fullName>
+                <default>false</default>
+                <label>TT 14 Days from Date of Delivery</label>
+            </value>
+            <value>
+                <fullName>TT 30 Days from Presentation of Documents</fullName>
+                <default>false</default>
+                <label>TT 30 Days from Presentation of Documents</label>
+            </value>
+            <value>
+                <fullName>TT 60 Days from BL Date</fullName>
+                <default>false</default>
+                <label>TT 60 Days from BL Date</label>
+            </value>
+            <value>
+                <fullName>TT 75 Days from BL Date</fullName>
+                <default>false</default>
+                <label>TT 75 Days from BL Date</label>
+            </value>
+            <value>
+                <fullName>TT 95 Days from BL Date</fullName>
+                <default>false</default>
+                <label>TT 95 Days from BL Date</label>
+            </value>
+            <value>
+                <fullName>TT 120 Days from BL Date</fullName>
+                <default>false</default>
+                <label>TT 120 Days from BL Date</label>
+            </value>
+            <value>
+                <fullName>TT 150 Days from BL Date</fullName>
+                <default>false</default>
+                <label>TT 150 Days from BL Date</label>
+            </value>
+            <value>
+                <fullName>TT Against Faxed Original BL</fullName>
+                <default>false</default>
+                <label>TT Against Faxed Original BL</label>
+            </value>
+            <value>
+                <fullName>TT Against Orginal Documents</fullName>
+                <default>false</default>
+                <label>TT Against Orginal Documents</label>
+            </value>
+            <value>
+                <fullName>TT Against Original Shipping Docuements</fullName>
+                <default>false</default>
+                <label>TT Against Original Shipping Docuements</label>
+            </value>
+            <value>
+                <fullName>TT Before Shipment</fullName>
+                <default>false</default>
+                <label>TT Before Shipment</label>
+            </value>
+            <value>
+                <fullName>Upon Receipt Payment from Buyer</fullName>
+                <default>false</default>
+                <label>Upon Receipt Payment from Buyer</label>
+            </value>
+            <value>
+                <fullName>TT 90 Days EOM</fullName>
+                <default>false</default>
+                <label>TT 90 Days EOM</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,43 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" controller="ProfileController">
+	<aura:attribute name="record" type="Object" />
+<aura:attribute name="simpleRecord" type="Object" />
+<aura:attribute name="recordError" type="String" />
+    <aura:attribute name="profileName" type="String" />
+    <aura:attribute name="recordId" type="String" access="global"/>    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler> 
+ <force:recordData aura:id="recordEditor"
+    layoutType="FULL"
+    recordId="{!v.recordId}"
+    targetError="{!v.recordError}"
+    targetRecord="{!v.record}"
+    targetFields ="{!v.simpleRecord}"
+    mode="EDIT"/>
+    
+    <lightning:recordEditForm aura:id="recordEditForm"
+                           objectApiName="Contract__c" recordId="{!v.recordId}" class="slds-m-horizontal--large">
+        <lightning:messages/>
+        <aura:if  isTrue="{!v.profileName=='Seller' || v.profileName=='Producer Admin' || v.profileName=='Producer User' || v.profileName=='Producer Management' || v.profileName=='System Administrator'}">             	
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+               <lightning:inputField fieldName="Seller_Comment__c" />
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <!-- More lightning:inputField components here -->
+            </div>
+        </div>
+        </aura:if>
+        <aura:if  isTrue="{!v.profileName=='Buyer' || v.profileName=='Consumer Admin' || v.profileName=='Consumer User' || v.profileName=='Consumer Management' || v.profileName=='System Administrator'}">             	
+       
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+               <lightning:inputField fieldName="Buyer_Comment__c" />
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <!-- More lightning:inputField components here -->
+            </div>
+        </div>
+        </aura:if>
+        <div class="slds-align_absolute-center" style="height: 5rem;"><lightning:button class="slds-button" variant="brand" type="submit" label="Save"/></div>
+        
+    </lightning:recordEditForm>
+</aura:component>

@@ -1,0 +1,685 @@
+<aura:component controller="BuyerTradePanelController">
+	<aura:attribute name="open" type="Boolean" default="false" />
+	<aura:attribute name="status_view" type="String" default="view" />
+	<aura:attribute name="offer_data" type="Quotation__c" />
+	<aura:attribute name="Comment__c_temp" type="String" />
+
+	<aura:attribute name="onLoading" type="Boolean" default="false" />
+	<aura:attribute name="error" type="String" default="" />
+
+	<aura:registerEvent name="onChangeTrade" type="c:TrandeEvent" />
+
+	<aura:if isTrue="{! v.open}">
+		<aura:if isTrue="{! v.status_view =='view' }">
+			<section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open confirm_popup">
+				<div class="slds-modal__container">
+					<header class="slds-modal__header">
+						<lightning:buttonIcon iconName="utility:close" onclick="{! c.onCancel }" alternativeText="close" variant="bare-inverse"
+						 class="slds-modal__close" />
+						<h2 class="slds-text-heading_medium slds-hyphenate">{!v.offer_data.Producer__r.Name}-{!v.offer_data.Seller__r.Name}</h2>
+					</header>
+
+					<div class="slds-modal__content slds-p-around_medium">
+						<aura:if isTrue="{! v.onLoading}">
+							<c:LoadingBar />
+						</aura:if>
+
+						<aura:if isTrue="{!v.error != ''}">
+							<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+								<span class="slds-assistive-text">error</span>
+								<h2>{!v.error}</h2>
+							</div>
+						</aura:if>
+
+						<div class="slds-grid slds-wrap slds-gutters">
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">FACTORY</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Factory__r.Name}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PORT</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Factory__r.Port__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">GRADE</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Grade__r.Name}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PACKING</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Packing__r.Name ? '' : 'add-card-margin'}">{!v.offer_data.Packing__r.Name}</label>
+									</div>
+								</article>
+							</div>
+
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">SYMBOL</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Factory__r.Factory_Code__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">SHIPMENT</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Shipment_Information__r.Incoterm__c ? '' : 'add-card-margin'}">{!v.offer_data.Shipment_Information__r.Incoterm__c}</label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">MONTH</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Month__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PAYMENT TERMS</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Payment_Term__r.Payment_Term__c ? '' : 'add-card-margin'}">{!v.offer_data.Payment_Term__r.Payment_Term__c}</label>
+									</div>
+								</article>
+							</div>
+
+
+
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary">
+									<div class="card-price-header slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">BID VOLUME</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<lightning:input name="input1" value="{!v.offer_data.Bid_Volume__c}" variant="label-hidden" />
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary">
+									<div class="card-price-header slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">BID</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<lightning:input name="input1" value="{!v.offer_data.Bid_Price__c}" variant="label-hidden" />
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary-opa">
+									<div class="card-price-header-opa slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">ASK</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Ask_Price__c ? 'add-margin-with-price' : 'add-margin'}">
+											<ui:outputCurrency value="{!v.offer_data.Ask_Price__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary-opa">
+									<div class="card-price-header-opa slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">ASK VOLUME</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Ask_Volume__c ? 'add-margin-with-price' : 'add-margin'}">
+											<ui:outputCurrency value="{!v.offer_data.Ask_Volume__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+
+							<aura:if isTrue="{!v.offer_data.LastModifiedBy.Name}">
+								<div class="slds-col slds-size_1-of-1 slds-m-vertical_small">
+									<b class="user">{!v.offer_data.LastModifiedBy.Name}:</b> &nbsp;&nbsp; {!v.offer_data.Comment__c} &nbsp;&nbsp;
+									<b>
+										<c:FormatTime date="{!v.offer_data.LastModifiedDate}" /></b>
+								</div>
+							</aura:if>
+
+							<div class="slds-col slds-size_1-of-1">
+								<lightning:textarea name="input1" label="Comment :" value="{!v.Comment__c_temp}" />
+							</div>
+						</div>
+					</div>
+
+					<footer class="slds-modal__footer">
+
+						<div class="slds-grid slds-wrap slds-gutters">
+							<div class="slds-col slds-size_6-of-12">
+								<div class="slds-form-element">
+									<label class="slds-checkbox_toggle slds-grid">
+										<span class="slds-form-element__label slds-m-bottom_none">All or Nothing</span>
+										<ui:inputCheckbox value="{!v.offer_data.All_or_Nothing__c}" />
+										<span id="checkbox-toggle-2" class="slds-checkbox_faux_container" aria-live="assertive">
+											<span class="slds-checkbox_faux"></span>
+											<span class="slds-checkbox_on">Enabled</span>
+											<span class="slds-checkbox_off">Disabled</span>
+										</span>
+									</label>
+								</div>
+							</div>
+							<div class="slds-col slds-size_6-of-12">
+								<lightning:button variant="success" label="Accept" title="Accept" onclick="{! c.onAccept }" />
+								<lightning:button variant="destructive" label="Reject" title="Reject" onclick="{! c.onReject }" />
+								<lightning:button variant="brand" label="Counter" title="Counter" onclick="{! c.onCounter }" />
+							</div>
+						</div>
+
+					</footer>
+				</div>
+			</section>
+		</aura:if>
+
+		<aura:if isTrue="{! v.status_view =='accept' }">
+			<section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open confirm_popup">
+				<div class="slds-modal__container">
+					<header class="slds-modal__header">
+						<lightning:buttonIcon iconName="utility:close" onclick="{! c.onCancel }" alternativeText="close" variant="bare-inverse"
+						 class="slds-modal__close" />
+						<h2 class="slds-text-heading_medium slds-hyphenate">Accept Confirmation</h2>
+					</header>
+					<div class="slds-modal__content slds-p-around_medium">
+						<h3 class="header_title">{!v.offer_data.Producer__r.Name}-{!v.offer_data.Seller__r.Name}</h3>
+
+						<div class="slds-grid slds-wrap slds-gutters">
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">FACTORY</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Factory__r.Name}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PORT</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Factory__r.Port__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">GRADE</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Grade__r.Name}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PACKING</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Packing__r.Name ? '' : 'add-card-margin'}">{!v.offer_data.Packing__r.Name}</label>
+									</div>
+								</article>
+							</div>
+
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">SYMBOL</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Quotation_Status__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">SHIPMENT</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Shipment_Information__r.Incoterm__c ? '' : 'add-card-margin'}">{!v.offer_data.Shipment_Information__r.Incoterm__c}</label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">MONTH</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Month__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PAYMENT TERMS</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Payment_Term__r.Payment_Term__c ? '' : 'add-card-margin'}">{!v.offer_data.Payment_Term__r.Payment_Term__c}</label>
+									</div>
+								</article>
+							</div>
+
+
+
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary">
+									<div class="card-price-header slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">AGREED PRICE</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner card-price-body slds-align_absolute-center">
+										<label class="{! v.offer_data.Ask_Price__c ? 'add-margin-with-price' : 'add-margin'}">
+											<ui:outputCurrency value="{!v.offer_data.Ask_Price__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary">
+									<div class="card-price-header slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">AGREED VOLUME</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner card-price-body slds-align_absolute-center">
+										<label class="{! v.offer_data.Ask_Volume__c ? 'add-margin-with-price' : 'add-margin'}">
+											<ui:outputCurrency value="{!v.offer_data.Ask_Volume__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+
+							<aura:if isTrue="{!v.offer_data.LastModifiedBy.Name}">
+								<div class="slds-col slds-size_1-of-1 slds-m-vertical_small">
+									<b class="user">{!v.offer_data.LastModifiedBy.Name}:</b> &nbsp;&nbsp; {!v.offer_data.Comment__c} &nbsp;&nbsp;
+									<b>
+										<c:FormatTime date="{!v.offer_data.LastModifiedDate}" /></b>
+								</div>
+							</aura:if>
+
+							<div class="slds-col slds-size_1-of-1">
+								<lightning:textarea name="input1" label="Comment :" value="{!v.Comment__c_temp}" disabled="true" />
+							</div>
+
+						</div>
+
+					</div>
+					<footer class="slds-modal__footer">
+						<lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.backToView }" />
+						<lightning:button variant="brand" label="Accept" title="Confirm" onclick="{! c.onConfirmAccept }" />
+					</footer>
+				</div>
+			</section>
+		</aura:if>
+
+		<aura:if isTrue="{! v.status_view =='reject' }">
+			<section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open confirm_popup">
+				<div class="slds-modal__container">
+					<header class="slds-modal__header">
+						<lightning:buttonIcon iconName="utility:close" onclick="{! c.onCancel }" alternativeText="close" variant="bare-inverse"
+						 class="slds-modal__close" />
+						<h2 class="slds-text-heading_medium slds-hyphenate">Reject Confirmation</h2>
+					</header>
+					<div class="slds-modal__content slds-p-around_medium">
+						<h3 class="header_title">{!v.offer_data.Producer__r.Name}-{!v.offer_data.Seller__r.Name}</h3>
+
+						<div class="slds-grid slds-wrap slds-gutters">
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">FACTORY</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Factory__r.Name}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PORT</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Factory__r.Port__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">GRADE</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Grade__r.Name}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PACKING</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Packing__r.Name ? '' : 'add-card-margin'}">{!v.offer_data.Packing__r.Name}</label>
+									</div>
+								</article>
+							</div>
+
+
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">SYMBOL</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Factory__r.Factory_Code__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">SHIPMENT</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Shipment_Information__r.Incoterm__c ? '' : 'add-card-margin'}">{!v.offer_data.Shipment_Information__r.Incoterm__c}</label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">MONTH</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Month__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PAYMENT TERMS</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Payment_Term__r.Payment_Term__c ? '' : 'add-card-margin'}">{!v.offer_data.Payment_Term__r.Payment_Term__c}</label>
+									</div>
+								</article>
+							</div>
+
+
+
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary">
+									<div class="card-price-header slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">BID VOLUME</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner card-price-body slds-align_absolute-center">
+										<label class="{! v.offer_data.Bid_Volume__c ? '' : 'cf-margin-price'}">
+											<ui:outputCurrency value="{!v.offer_data.Bid_Volume__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary">
+									<div class="card-price-header slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">BID</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner card-price-body slds-align_absolute-center">
+										<label class="{! v.offer_data.Bid_Price__c ? '' : 'cf-margin-price'}">
+											<ui:outputCurrency value="{!v.offer_data.Bid_Price__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary-opa">
+									<div class="card-price-header-opa slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">ASK</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner card-price-body slds-align_absolute-center">
+										<label class="{! v.offer_data.Ask_Price__c ? '' : 'cf-margin-price'}">
+											<ui:outputCurrency value="{!v.offer_data.Ask_Price__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary-opa">
+									<div class="card-price-header-opa slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">ASK VOLUME</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner card-price-body slds-align_absolute-center">
+										<label class="{! v.offer_data.Ask_Volume__c ? '' : 'cf-margin-price'}">
+											<ui:outputCurrency value="{!v.offer_data.Ask_Volume__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+
+							<aura:if isTrue="{!v.offer_data.LastModifiedBy.Name}">
+								<div class="slds-col slds-size_1-of-1 slds-m-vertical_small">
+									<b class="user">{!v.offer_data.LastModifiedBy.Name}:</b> &nbsp;&nbsp; {!v.offer_data.Comment__c} &nbsp;&nbsp;
+									<b>
+										<c:FormatTime date="{!v.offer_data.LastModifiedDate}" /></b>
+								</div>
+							</aura:if>
+
+							<div class="slds-col slds-size_1-of-1">
+								<lightning:textarea name="input1" label="Comment :" value="{!v.Comment__c_temp}" disabled="true" />
+							</div>
+
+						</div>
+
+					</div>
+					<footer class="slds-modal__footer">
+						<lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.backToView }" />
+						<lightning:button variant="brand" label="Reject" title="Confirm" onclick="{! c.onConfirmReject }" />
+					</footer>
+				</div>
+			</section>
+		</aura:if>
+
+		<aura:if isTrue="{! v.status_view =='counter' }">
+			<section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open confirm_popup">
+				<div class="slds-modal__container">
+					<header class="slds-modal__header">
+						<lightning:buttonIcon iconName="utility:close" onclick="{! c.onCancel }" alternativeText="close" variant="bare-inverse"
+						 class="slds-modal__close" />
+						<h2 class="slds-text-heading_medium slds-hyphenate">Counter Confirmation</h2>
+					</header>
+					<div class="slds-modal__content slds-p-around_medium">
+						<h3 class="header_title">{!v.offer_data.Producer__r.Name}-{!v.offer_data.Seller__r.Name}</h3>
+
+						<aura:if isTrue="{!v.offer_data.Bid_Price__c > v.offer_data.Ask_Price__c}">
+							<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_error" role="alert">
+								<span class="slds-assistive-text">warning</span>
+								<h2>Your bid is higher than the offered ask price.</h2>
+							</div>
+						</aura:if>
+
+						<div class="slds-grid slds-wrap slds-gutters">
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">FACTORY</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Factory__r.Name}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PORT</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Factory__r.Port__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">GRADE</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Grade__r.Name}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PACKING</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Packing__r.Name ? '' : 'add-card-margin'}">{!v.offer_data.Packing__r.Name}</label>
+									</div>
+								</article>
+							</div>
+
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">SYMBOL</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Factory__r.Factory_Code__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">SHIPMENT</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Shipment_Information__r.Incoterm__c ? '' : 'add-card-margin'}">{!v.offer_data.Shipment_Information__r.Incoterm__c}</label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">MONTH</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										{!v.offer_data.Month__c}
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card">
+									<div class="card-header slds-align_absolute-center slds-grid">
+										<h2 class="header-text">PAYMENT TERMS</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner slds-align_absolute-center">
+										<label class="{! v.offer_data.Payment_Term__r.Payment_Term__c ? '' : 'add-card-margin'}">{!v.offer_data.Payment_Term__r.Payment_Term__c}</label>
+									</div>
+								</article>
+							</div>
+
+
+
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary">
+									<div class="card-price-header slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">BID VOLUME</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner card-price-body slds-align_absolute-center">
+										<label class="{! v.offer_data.Bid_Volume__c ? '' : 'cf-margin-price'}">
+											<ui:outputCurrency value="{!v.offer_data.Bid_Volume__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary">
+									<div class="card-price-header slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">BID</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner card-price-body slds-align_absolute-center">
+										<label class="{! v.offer_data.Bid_Price__c ? '' : 'cf-margin-price'}">
+											<ui:outputCurrency value="{!v.offer_data.Bid_Price__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary-opa">
+									<div class="card-price-header-opa slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">ASK</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner card-price-body slds-align_absolute-center">
+										<label class="{! v.offer_data.Ask_Price__c ? '' : 'cf-margin-price'}">
+											<ui:outputCurrency value="{!v.offer_data.Ask_Price__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+							<div class="slds-col slds-size_3-of-12">
+								<article class="slds-card card-price slds-card_boundary boundary-opa">
+									<div class="card-price-header-opa slds-align_absolute-center slds-grid">
+										<h2 class="card-price-header-text">ASK VOLUME</h2>
+									</div>
+									<div class="slds-card__body slds-card__body_inner card-price-body slds-align_absolute-center">
+										<label class="{! v.offer_data.Ask_Volume__c ? '' : 'cf-margin-price'}">
+											<ui:outputCurrency value="{!v.offer_data.Ask_Volume__c}" currencySymbol=" " /></label>
+									</div>
+								</article>
+							</div>
+
+							<aura:if isTrue="{!v.offer_data.LastModifiedBy.Name}">
+								<div class="slds-col slds-size_1-of-1 slds-m-vertical_small">
+									<b class="user">{!v.offer_data.LastModifiedBy.Name}:</b> &nbsp;&nbsp; {!v.offer_data.Comment__c} &nbsp;&nbsp;
+									<b>
+										<c:FormatTime date="{!v.offer_data.LastModifiedDate}" /></b>
+								</div>
+							</aura:if>
+
+							<div class="slds-col slds-size_1-of-1">
+								<lightning:textarea name="input1" label="Comment :" value="{!v.Comment__c_temp}" disabled="true" />
+							</div>
+
+						</div>
+
+					</div>
+					<footer class="slds-modal__footer">
+						<lightning:button variant="neutral" label="Cancel" title="Cancel" onclick="{! c.backToView }" />
+						<lightning:button variant="brand" label="Counter" title="Confirm" onclick="{! c.onConfirmCounter }" />
+					</footer>
+				</div>
+			</section>
+		</aura:if>
+
+		<div class="slds-backdrop slds-backdrop_open"></div>
+	</aura:if>
+
+</aura:component>

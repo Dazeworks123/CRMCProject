@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rubber_Origin__c</fullName>
+    <externalId>false</externalId>
+    <label>Rubber Origin</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Grade__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>Africa</fullName>
+                <default>false</default>
+                <label>Africa</label>
+            </value>
+            <value>
+                <fullName>Cambodia</fullName>
+                <default>false</default>
+                <label>Cambodia</label>
+            </value>
+            <value>
+                <fullName>Cameroon</fullName>
+                <default>false</default>
+                <label>Cameroon</label>
+            </value>
+            <value>
+                <fullName>China</fullName>
+                <default>false</default>
+                <label>China</label>
+            </value>
+            <value>
+                <fullName>Democratic Republic of the Congo</fullName>
+                <default>false</default>
+                <label>Democratic Republic of the Congo</label>
+            </value>
+            <value>
+                <fullName>Gabon</fullName>
+                <default>false</default>
+                <label>Gabon</label>
+            </value>
+            <value>
+                <fullName>Ghana</fullName>
+                <default>false</default>
+                <label>Ghana</label>
+            </value>
+            <value>
+                <fullName>Guatemala</fullName>
+                <default>false</default>
+                <label>Guatemala</label>
+            </value>
+            <value>
+                <fullName>India</fullName>
+                <default>false</default>
+                <label>India</label>
+            </value>
+            <value>
+                <fullName>Indonesia</fullName>
+                <default>false</default>
+                <label>Indonesia</label>
+            </value>
+            <value>
+                <fullName>Ivory Coast</fullName>
+                <default>false</default>
+                <label>Ivory Coast</label>
+            </value>
+            <value>
+                <fullName>Laos</fullName>
+                <default>false</default>
+                <label>Laos</label>
+            </value>
+            <value>
+                <fullName>Liberia</fullName>
+                <default>false</default>
+                <label>Liberia</label>
+            </value>
+            <value>
+                <fullName>Malaysia</fullName>
+                <default>false</default>
+                <label>Malaysia</label>
+            </value>
+            <value>
+                <fullName>Myanmar</fullName>
+                <default>false</default>
+                <label>Myanmar</label>
+            </value>
+            <value>
+                <fullName>Nigeria</fullName>
+                <default>false</default>
+                <label>Nigeria</label>
+            </value>
+            <value>
+                <fullName>Philippines</fullName>
+                <default>false</default>
+                <label>Philippines</label>
+            </value>
+            <value>
+                <fullName>Sri Lanka</fullName>
+                <default>false</default>
+                <label>Sri Lanka</label>
+            </value>
+            <value>
+                <fullName>Thailand</fullName>
+                <default>false</default>
+                <label>Thailand</label>
+            </value>
+            <value>
+                <fullName>Vietnam</fullName>
+                <default>false</default>
+                <label>Vietnam</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>SMR20 CV</controllingFieldValue>
+            <controllingFieldValue>SMRGP</controllingFieldValue>
+            <controllingFieldValue>SMR20</controllingFieldValue>
+            <controllingFieldValue>SMR CV50</controllingFieldValue>
+            <controllingFieldValue>SMR CV60</controllingFieldValue>
+            <controllingFieldValue>SMR L</controllingFieldValue>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>CBR 1066</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>SMR 10 Mixture Rubber</controllingFieldValue>
+            <controllingFieldValue>SMR 20 Mixture Rubber</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <controllingFieldValue>SMR5</controllingFieldValue>
+            <controllingFieldValue>SMR10</controllingFieldValue>
+            <controllingFieldValue>SMR10 CV</controllingFieldValue>
+            <valueName>Malaysia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>TPC 1X</controllingFieldValue>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Sri Lanka</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR10</controllingFieldValue>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>SKIM BLOCK</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Philippines</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <controllingFieldValue>AFR5</controllingFieldValue>
+            <controllingFieldValue>AFR10</controllingFieldValue>
+            <controllingFieldValue>AFR L</controllingFieldValue>
+            <valueName>Africa</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Cambodia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Cameroon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>SBR 1502</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>SCR5 SHFE</controllingFieldValue>
+            <controllingFieldValue>SHFE SCR5</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>China</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR WF</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Democratic Republic of the Congo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR 5L</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Gabon</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>SKI 3</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Ghana</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR L</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>SGR10</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Guatemala</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS CUTTING</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>INR10</controllingFieldValue>
+            <controllingFieldValue>ISNR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>India</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>CBR 1240</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>SIR5</controllingFieldValue>
+            <controllingFieldValue>SIR10</controllingFieldValue>
+            <controllingFieldValue>SIR10 VK</controllingFieldValue>
+            <controllingFieldValue>SIR20 VK</controllingFieldValue>
+            <controllingFieldValue>SIR20 APC</controllingFieldValue>
+            <controllingFieldValue>SIR20</controllingFieldValue>
+            <controllingFieldValue>SIR 20C</controllingFieldValue>
+            <controllingFieldValue>SIR 20UG</controllingFieldValue>
+            <controllingFieldValue>SIR 10 Mixture Rubber</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>SIR 20 Mixture Rubber</controllingFieldValue>
+            <controllingFieldValue>SIR 3L</controllingFieldValue>
+            <controllingFieldValue>SIR CV50</controllingFieldValue>
+            <controllingFieldValue>SIR CV60</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Indonesia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>LATEX LA</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Ivory Coast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>CHC10</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Laos</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>LAC10</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Liberia</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS5</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <controllingFieldValue>ENR</controllingFieldValue>
+            <valueName>Myanmar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>SBR 1712</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Nigeria</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>STR5</controllingFieldValue>
+            <controllingFieldValue>STR10</controllingFieldValue>
+            <controllingFieldValue>STR10 CV</controllingFieldValue>
+            <controllingFieldValue>STR20</controllingFieldValue>
+            <controllingFieldValue>ADS XL</controllingFieldValue>
+            <controllingFieldValue>EVA 1066</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>STR CV40</controllingFieldValue>
+            <controllingFieldValue>STR CV50</controllingFieldValue>
+            <controllingFieldValue>STR CV60</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>STR 10 Mixture Rubber</controllingFieldValue>
+            <controllingFieldValue>STR 20 Mixture Rubber</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Thailand</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>SPR20</controllingFieldValue>
+            <controllingFieldValue>RSS3 SICOM</controllingFieldValue>
+            <controllingFieldValue>TSR20 SICOM</controllingFieldValue>
+            <controllingFieldValue>LATEX HA</controllingFieldValue>
+            <controllingFieldValue>RSS3</controllingFieldValue>
+            <controllingFieldValue>SVR5</controllingFieldValue>
+            <controllingFieldValue>RSS4</controllingFieldValue>
+            <controllingFieldValue>SVR10</controllingFieldValue>
+            <controllingFieldValue>SVR10 CV60</controllingFieldValue>
+            <controllingFieldValue>SVR20</controllingFieldValue>
+            <controllingFieldValue>SVR 3L</controllingFieldValue>
+            <controllingFieldValue>SVR CV50</controllingFieldValue>
+            <controllingFieldValue>SVR CV60</controllingFieldValue>
+            <controllingFieldValue>SVR L</controllingFieldValue>
+            <controllingFieldValue>RSS1</controllingFieldValue>
+            <controllingFieldValue>RSS3 TOCOM</controllingFieldValue>
+            <valueName>Vietnam</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

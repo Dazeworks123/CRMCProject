@@ -1,0 +1,5 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute type="Contract__c" name="Contract" default="{ 'sobjectType' : 'Contract__c' }"/>
+    <force:inputField value="{!v.Contract.Buyer_Comment__c}" aura:id="contractType1"/>
+    <!--<force:inputField value="{!v.Contract.Buyer_Comment__c}" aura:id="contractType1"/>-->
+</aura:component>

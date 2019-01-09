@@ -1,0 +1,7 @@
+<aura:component>
+    <aura:attribute name="progress" type="Integer" default="0"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <div class="slds-progress-bar slds-progress-bar_circular slds-progress-bar_medium" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{!v.progress }" role="progressbar">
+        <span class="slds-progress-bar__value" style="{! 'width :' + v.progress + '%; background-color : rgba(0, 119, 179, 1);' }"></span>
+    </div>
+</aura:component>

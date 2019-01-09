@@ -1,0 +1,20 @@
+.THIS {
+}
+.THIS .header{
+	font-size: 18px;
+	font-weight: bold;
+}
+.THIS .hr
+{
+	margin: 0;
+}
+
+.THIS .txt-right
+{
+	text-align: right;
+}
+.THIS .btn-secondary{
+    background-color: #6B7c85;
+    color: white;
+    border-color: #6B7c85;
+}

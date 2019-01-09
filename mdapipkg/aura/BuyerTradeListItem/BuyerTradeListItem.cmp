@@ -1,0 +1,51 @@
+<aura:component controller="BuyerTradePanelController">
+	<aura:attribute name="trade_item" type="object"/>
+    <aura:attribute name="trade_open" type="Boolean" default="false" />
+    <aura:attribute name="trade_view" type="String" default="view" />
+    <aura:attribute name="confirm_open" type="Boolean" default="false" />
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+	<aura:handler name="onConfirm" event="c:ConfirmEvent" action="{!c.onPullBidConfirm}"/>
+	<aura:attribute name="history_list" type="Quotation_Iteration__c" />
+	<aura:attribute name="onLoadingHistory" type="Boolean" />
+	<aura:attribute name="history_open" type="Boolean" default="false" />
+	<aura:attribute name="isDoneDeal" type="Boolean" />
+  
+	<aura:registerEvent name="onPulled" type="c:TrandeEvent"/>
+	<aura:registerEvent name="onFavorite" type="c:TrandeEvent"/>
+	
+    <c:Confirm 
+			open="{!v.confirm_open}" 
+			eventName="PullBidConfirm" 
+			description="Are you sure you want to pull bid?" 
+			confirm_label = "Pull Bid"/>
+
+    <c:BuyerTradeConfirmation 
+            offer_data="{!v.trade_item}" 
+            open="{!v.trade_open}" 
+			status_view="{!v.trade_view}"/>
+
+	<tr class="slds-hint-parent" >
+		<td scope="row" data-label=""><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate star-cursor' : 'slds-truncate star-cursor'}" onclick="{!c.onClickStar}"><lightning:icon iconName="utility:favorite" variant="{!v.trade_item.Favorite_Consumer__c?'warning':'default'}" size="small"/></div></td>
+		<td scope="row" data-label="ICON"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" ><img src="{!v.trade_item.Producer__r.Icon_URL__c}" class="logo_company"/></div></td>
+		<td scope="row" data-label="NAME"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" title="{!v.trade_item.Seller__r.Name}">{!v.trade_item.Seller__r.Name}</div></td>
+		<td scope="row" data-label="FACTORY"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" title="{!v.trade_item.Factory__r.Name}">{!v.trade_item.Factory__r.Name}</div></td>
+		<td scope="row" data-label="SYMBOL"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" title="{!v.trade_item.Factory_Symbol__c}">{!v.trade_item.Factory_Symbol__c}</div></td>
+		<td scope="row" data-label="MONTH"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" title="{!v.trade_item.Month__c}">{!v.trade_item.Month__c}</div></td>
+		<td scope="row" data-label="STATUS"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" title="{!v.trade_item.Quotation_Status__c}">{!v.trade_item.Quotation_Status__c}</div></td>
+		<td scope="row" data-label="GRADE"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" title="{!v.trade_item.Grade__r.Name}">{!v.trade_item.Grade__r.Name}</div></td>
+		<td scope="row" data-label="BID VOL"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" title="{!v.trade_item.Bid_Volume__c}"><ui:outputCurrency value="{!v.trade_item.Bid_Volume__c}" currencySymbol=" "/></div></td>
+		<td scope="row" data-label="BID"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" title="{!v.trade_item.Bid_Price__c}"><c:FormatPrice price="{!v.trade_item.Bid_Price__c}"/></div></td>
+		<td scope="row" data-label="ASK"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" title="{!v.trade_item.Ask_Price__c}"><c:FormatPrice price="{!v.trade_item.Ask_Price__c}"/></div></td>
+		<td scope="row" data-label="ASK VOL"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" title="{!v.trade_item.Ask_Volume__c}">
+		<ui:outputCurrency value="{!v.trade_item.Ask_Volume__c}" currencySymbol=" "/>
+		</div></td>
+		<td scope="row" data-label="LATER UPDATE DATE/TIME"><div class="{!v.isDoneDeal ? 'disable-opa slds-truncate' : 'slds-truncate'}" title="{!v.trade_item.LastModifiedDate}"><c:FormatTime date="{!v.trade_item.LastModifiedDate}"/></div></td>
+		<!-- <td scope="row" data-label="COMMENT"><div class="slds-truncate" title="{!v.trade_item.comment}">{!v.trade_item.comment}</div></td> -->
+		<td scope="row" data-label="ACTION">
+			<lightning:button class="{!v.isDoneDeal ? 'disable-opa btn-secondary' : 'btn-secondary'}" onclick="{!c.onHistoryPopup}">HISTORY</lightning:button>
+			<lightning:button variant="brand" class="{!v.isDoneDeal ? 'disable-opa trade_btn' : 'trade_btn'}" onclick="{!c.onTradePopup}" disabled="{!v.isDoneDeal}">TRADE</lightning:button>
+			<lightning:button variant="Neutral" class="{!v.isDoneDeal ? 'disable-opa pull_btn' : 'pull_btn'}" onclick="{!c.onPullBidPopup}" disabled="{!v.isDoneDeal}">PULL<br/>BID</lightning:button>
+            <c:BuyerHistory quote_data="{!v.trade_item}" history_list="{!v.history_list}" onLoadingHistory="{!v.onLoadingHistory}" open="{!v.history_open}"/>
+		</td>
+	</tr>
+</aura:component>

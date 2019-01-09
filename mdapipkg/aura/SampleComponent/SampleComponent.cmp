@@ -1,0 +1,52 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="SampleComponent">
+	<aura:attribute name="sample_name" type="String" default="Hello world"/>
+	<aura:attribute name="record" type="Account" />
+	<aura:attribute name="isPopup" type="boolean" default="false"/>
+	<!-- <aura:attribute name="info" type="Object" /> -->
+	
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+	<!-- <aura:handler name="destroy" value="{!this}" action="{!c.destroy}"/> -->
+	<aura:handler name="popupCloseEvent" event="c:PopupEvent" action="{!c.closeModel}"/>
+	<aura:handler name="popupOpenEvent" event="c:PopupEvent" action="{!c.openModel}"/>
+	
+
+	<article class="slds-card">
+	  <div class="slds-card__header slds-grid">
+	    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+	      <div class="slds-media__figure">
+	      	<lightning:icon iconName="standard:account" alternativeText="Account" />
+	      </div>
+	      <div class="slds-media__body">
+	        <h2 class="slds-card__header-title">
+	          <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+	            <span>Accounts : {!v.record.Name}</span>
+	          </a>
+	        </h2>
+	      </div>
+	      <div class="slds-no-flex">
+	        <button onclick="{!c.goodbye}" class="slds-button slds-button_neutral">Good bye!</button>
+	      </div>
+				<div class="slds-no-flex">
+	        <button onclick="{!c.openModel}"  class="slds-button slds-button_neutral">Displays Popup</button>
+	      </div>
+	    </header>
+	  </div>
+	  <div class="slds-card__body slds-card__body_inner">
+		  	{!v.sample_name}
+			<br/>  
+			ID : {!v.record.Id}
+			<c:ceHandler/>
+	  </div>
+	  <footer class="slds-card__footer cFooter">
+	    <a class="slds-card__footer-action" href="javascript:void(0);" onclick="{!c.viewAll}">View All
+	      <span class="slds-assistive-text">Accounts</span>
+	    </a>
+	  </footer>
+	</article>
+	
+	<aura:if isTrue="{!v.isPopup}">
+		<c:Popup />
+	</aura:if>
+		
+
+</aura:component>

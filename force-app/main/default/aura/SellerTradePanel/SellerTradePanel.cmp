@@ -1,0 +1,44 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" controller="SellerTradePanelController">
+	<aura:attribute name="confirm_open" type="Boolean" default="false" />
+	<aura:attribute name="onLoading" type="Boolean" />
+	<aura:attribute name="data_list" type="object[]"/>
+	<aura:attribute name="view" type="string"/>
+	<aura:handler name="init" value="{!this}" action="{!c.init}"/>
+	<aura:attribute name="sort_info" type="object"/>
+
+	<aura:handler name="onConfirm" event="c:ConfirmEvent" action="{!c.onPopupConfirm}"/>
+	<ltng:require scripts="https://js.pusher.com/4.3/pusher.min.js" afterScriptsLoaded="{!c.setUpPusher}" />
+	
+	<!-- <aura:handler name="onChangeTrade" event="c:TrandeEvent" action="{!c.init}"/>
+	<aura:handler name="onPulled" event="c:TrandeEvent" action="{!c.init}"/> -->
+
+	<aura:handler name="onChangeSort" event="c:SortEvent" action="{!c.changeSort}" />
+	<aura:handler name="onFavorite" event="c:TrandeEvent" action="{!c.onFavorite}"/>
+	
+	<c:Confirm 
+			open="{!v.confirm_open}" 
+			eventName="PullAllConfirm" 
+			description="Are you sure you want to PULL ALL OPEN OFFERS?" 
+			confirm_label = "Pull Offers"/>
+
+	<div class="slds-grid slds-gutters slds-wrap">
+		<div class="slds-col slds-size_1-of-1">
+			<h3 class="header">TRADE PANEL</h3>
+			<hr class="hr" />
+			<div class="slds-m-vertical_small">
+				<lightning:button variant="brand" onclick="{!c.onPullPopup}">
+						PULL ALL OPEN OFFERS
+				</lightning:button>
+			</div>
+
+			
+			<div class="{!v.onLoading? '' : 'slds-hidden' }">
+				<c:LoadingBar/>
+			</div>
+
+			
+			<c:SellerTradeList trade_list="{!v.data_list}" sort_info="{!v.sort_info}"/>
+
+		</div>
+	</div>
+</aura:component>
