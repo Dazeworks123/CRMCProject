@@ -1,0 +1,44 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Destination__c",
+                "referenceId": "Destination__cRef1"
+            },
+            "Name": "test",
+            "Default__c": false,
+            "Type__c": "Warehouse"
+        },
+        {
+            "attributes": {
+                "type": "Destination__c",
+                "referenceId": "Destination__cRef2"
+            },
+            "Name": "test2",
+            "Default__c": false,
+            "Destination_Country__c": " Thailand",
+            "Port_of_Discharge__c": "Laem Chabang",
+            "Type__c": "Warehouse"
+        },
+        {
+            "attributes": {
+                "type": "Destination__c",
+                "referenceId": "Destination__cRef3"
+            },
+            "Name": "Mechelin Super Center 1",
+            "Address__c": "12 Deutsche Strasse 23213",
+            "Default__c": false,
+            "Destination_Country__c": " Germany",
+            "Port_of_Discharge__c": "Hamburg",
+            "Type__c": "Factory"
+        },
+        {
+            "attributes": {
+                "type": "Destination__c",
+                "referenceId": "Destination__cRef4"
+            },
+            "Name": "Mechelin Super Center 2",
+            "Default__c": false
+        }
+    ]
+}

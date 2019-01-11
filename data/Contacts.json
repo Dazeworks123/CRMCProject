@@ -1,0 +1,212 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef1"
+            },
+            "AccountId": "@AccountRef1",
+            "Email": "anjali@dazeworks.com",
+            "FirstName": "Anjali",
+            "LastName": "Chaudhary"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef2"
+            },
+            "AccountId": "@AccountRef2",
+            "Email": "anjali@dazeworks.com",
+            "FirstName": "Himanshu",
+            "LastName": "Atal"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef3"
+            },
+            "AccountId": "@AccountRef3",
+            "Email": "thirawat@crmc.consulting",
+            "MobilePhone": "1223",
+            "FirstName": "Halcyon",
+            "LastName": "Management",
+            "Phone": "1234",
+            "Product__c": "Natural Rubber;Synthetic;Latex;Non-Rubber"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef4"
+            },
+            "AccountId": "@AccountRef3",
+            "Email": "thirawat@crmc.consulting",
+            "MobilePhone": "1223",
+            "FirstName": "Halcyon",
+            "LastName": "Admin",
+            "Phone": "1234",
+            "Product__c": "Natural Rubber;Synthetic;Latex;Non-Rubber"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef5"
+            },
+            "AccountId": "@AccountRef3",
+            "Email": "thirawat@crmc.consulting",
+            "MobilePhone": "1223",
+            "FirstName": "User",
+            "LastName": "Halcyon",
+            "Phone": "1234",
+            "Product__c": "Natural Rubber;Synthetic;Latex;Non-Rubber"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef6"
+            },
+            "AccountId": "@AccountRef3",
+            "Email": "test@test.com",
+            "MobilePhone": "6565",
+            "LastName": "Producer 1",
+            "Phone": "6565",
+            "Product__c": "Natural Rubber"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef7"
+            },
+            "AccountId": "@AccountRef4",
+            "Email": "thirawat@crmc.consulting",
+            "MobilePhone": "123",
+            "FirstName": "Bridgestone",
+            "LastName": "Admin",
+            "Phone": "123",
+            "Product__c": "Natural Rubber;Synthetic;Latex;Non-Rubber"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef8"
+            },
+            "AccountId": "@AccountRef4",
+            "Email": "thirawat@crmc.consulting",
+            "MobilePhone": "1223",
+            "FirstName": "User",
+            "LastName": "Bridgestone",
+            "Phone": "1234",
+            "Product__c": "Natural Rubber;Synthetic;Latex;Non-Rubber"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef9"
+            },
+            "AccountId": "@AccountRef4",
+            "Email": "thirawat@crmc.consulting",
+            "MobilePhone": "123",
+            "LastName": "Bridgestone Management",
+            "Phone": "123",
+            "Product__c": "Natural Rubber;Synthetic"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef10"
+            },
+            "AccountId": "@AccountRef4",
+            "Email": "philipp@crmc.consulting",
+            "MobilePhone": "234342342",
+            "FirstName": "Loius",
+            "LastName": "Litt",
+            "Phone": "334"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef11"
+            },
+            "AccountId": "@AccountRef4",
+            "Email": "developerhevea@crm-c.com",
+            "MobilePhone": "08970",
+            "FirstName": "Harvey",
+            "LastName": "Aguilar",
+            "Phone": "098098"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef12"
+            },
+            "AccountId": "@AccountRef5",
+            "Email": "thirawat@crmc.consulting",
+            "MobilePhone": "9070987",
+            "FirstName": "Consumer",
+            "LastName": "Management",
+            "Phone": "0987",
+            "Product__c": "Natural Rubber"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef13"
+            },
+            "AccountId": "@AccountRef5",
+            "Email": "thirawat@crmc.consulting",
+            "MobilePhone": "0989898",
+            "FirstName": "Consumer",
+            "LastName": "Admin",
+            "Phone": "3211233"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef14"
+            },
+            "AccountId": "@AccountRef5",
+            "Email": "thirawat@crmc.consulting",
+            "MobilePhone": "-",
+            "FirstName": "Caleb",
+            "LastName": "Pittman",
+            "Phone": "-"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef15"
+            },
+            "AccountId": "@AccountRef6",
+            "Email": "thirawat@crmc.consulting",
+            "MobilePhone": "1234",
+            "FirstName": "Hevea",
+            "LastName": "Management",
+            "Phone": "1234",
+            "Product__c": "Natural Rubber;Synthetic;Latex;Non-Rubber"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef16"
+            },
+            "AccountId": "@AccountRef6",
+            "Email": "thirawat@crmc.consulting",
+            "MobilePhone": "1223",
+            "FirstName": "Hevea",
+            "LastName": "Admin",
+            "Phone": "1223",
+            "Product__c": "Natural Rubber;Synthetic;Latex;Non-Rubber"
+        },
+        {
+            "attributes": {
+                "type": "Contact",
+                "referenceId": "ContactRef17"
+            },
+            "AccountId": "@AccountRef6",
+            "Email": "hevea@mail.com",
+            "MobilePhone": "-",
+            "FirstName": "Hevea",
+            "LastName": "Connect",
+            "Phone": "-"
+        }
+    ]
+}

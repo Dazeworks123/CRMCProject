@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "Destination__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Destination__cs.json"
+        ]
+    }
+]

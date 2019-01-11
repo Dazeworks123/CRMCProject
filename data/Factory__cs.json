@@ -1,0 +1,269 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef1"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "PALEMBANG",
+            "Factory_Code__c": "SCY",
+            "Factory_Location__c": "Indonesia",
+            "Name": "PT. SUNAN",
+            "Producer_s_Group__c": "Hevea Global",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef2"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "Ho chi minh",
+            "Factory_Code__c": "MSC",
+            "Factory_Location__c": "Vietnam",
+            "Name": "Madec Saigon",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef3"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Certifications__c": "ISO 9001",
+            "Employees__c": 200,
+            "Image_URL__c": "https://www.batamxinwen.com/wp-content/uploads/2018/07/WhatsApp-Image-2018-07-23-at-17.38.08.jpeg?x92337",
+            "Port__c": "PALEMBANG",
+            "Producer_Port_of_Loading__c": "Palembang",
+            "Factory_Code__c": "CXV",
+            "Factory_Location__c": "Indonesia",
+            "Name": "PT HEVEA MK I",
+            "Producer_s_Group__c": "Hevea Global",
+            "Year_of_Establishment__c": "1999",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef4"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Image_URL__c": "https://upload.wikimedia.org/wikipedia/commons/7/71/Wolfsburg_VW-Werk.jpg",
+            "Port__c": "PALEMBANG",
+            "Factory_Code__c": "SEA",
+            "Factory_Location__c": "Indonesia",
+            "Name": "PT.Hevea MK II",
+            "Producer_s_Group__c": "Hevea Global",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef5"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Certifications__c": "SNI 1903",
+            "Port__c": "Laemchabang",
+            "Description__c": "Thailand",
+            "Factory_Code__c": "CGD",
+            "Factory_Location__c": "Thailand",
+            "Name": "Thailand Super Factory",
+            "Producer_s_Group__c": "Hevea Global",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef6"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "KEDATON",
+            "Factory_Code__c": "KEDA",
+            "Factory_Location__c": "Indonesia",
+            "Name": "PTP 7",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef7"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "PALEMBANG",
+            "Factory_Code__c": "-",
+            "Factory_Location__c": "Indonesia",
+            "Name": "PT.ALICIA",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef8"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "Ho chi minh",
+            "Factory_Code__c": "PHRC",
+            "Factory_Location__c": "Vietnam",
+            "Name": "Phuoc Hoa Rubber Company",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef9"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "Ho chi minh",
+            "Factory_Code__c": "PRC",
+            "Factory_Location__c": "Vietnam",
+            "Name": "Phu Rieng Rubber Company",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef10"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "Rayong",
+            "Factory_Code__c": "CA",
+            "Factory_Location__c": "Thailand",
+            "Name": "Sin Tong Thai Rubber",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef11"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "Phattalung",
+            "Factory_Code__c": "BP",
+            "Factory_Location__c": "Thailand",
+            "Name": "Siamdo Rubber",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef12"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "Sadao",
+            "Factory_Code__c": "AX",
+            "Factory_Location__c": "Thailand",
+            "Name": "Hua Tai Rubber",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef13"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "CHEMOR",
+            "Factory_Code__c": "HL",
+            "Factory_Location__c": "Malaysia",
+            "Name": "CHIP LAM SENG",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef14"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "KUALA PILAH",
+            "Factory_Code__c": "MR/6",
+            "Factory_Location__c": "Malaysia",
+            "Name": "MARDEC BERHAD",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef15"
+            },
+            "Producer_group__c": "@AccountRef3",
+            "Port__c": "THUNGSONG",
+            "Factory_Code__c": "SIW/TS",
+            "Factory_Location__c": "Thailand",
+            "Name": "THUNGSONG SISAWAD",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef16"
+            },
+            "Producer_group__c": "@AccountRef7",
+            "Port__c": "JAMBI",
+            "Factory_Code__c": "SCL",
+            "Factory_Location__c": "Indonesia",
+            "Name": "PT. HOK TONG",
+            "Producer_s_Group__c": "Hevea Global",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef17"
+            },
+            "Producer_group__c": "@AccountRef7",
+            "Port__c": "Punpin",
+            "Factory_Code__c": "AJ2",
+            "Factory_Location__c": "Thailand",
+            "Name": "Von Bundit",
+            "Type__c": "Non-HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef18"
+            },
+            "Producer_group__c": "@AccountRef7",
+            "Port__c": "Chantaburi",
+            "Factory_Code__c": "BL",
+            "Factory_Location__c": "Thailand",
+            "Name": "Tong Thai Technical Rubber",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef19"
+            },
+            "Producer_group__c": "@AccountRef7",
+            "Port__c": "Krabi",
+            "Factory_Code__c": "BS",
+            "Factory_Location__c": "Thailand",
+            "Name": "Thaimac STR",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef20"
+            },
+            "Producer_group__c": "@AccountRef7",
+            "Port__c": "Ho chi minh",
+            "Factory_Code__c": "BRC",
+            "Factory_Location__c": "Vietnam",
+            "Name": "Baria Rubber Co",
+            "Type__c": "HAC"
+        },
+        {
+            "attributes": {
+                "type": "Factory__c",
+                "referenceId": "Factory__cRef21"
+            },
+            "Producer_group__c": "@AccountRef7",
+            "Port__c": "TENOM",
+            "Factory_Code__c": "AG/8",
+            "Factory_Location__c": "Malaysia",
+            "Name": "TENOM SMR FACTORY",
+            "Type__c": "HAC"
+        }
+    ]
+}

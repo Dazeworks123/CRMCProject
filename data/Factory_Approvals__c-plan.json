@@ -1,0 +1,10 @@
+[
+    {
+        "sobject": "Factory_Approvals__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": [
+            "Factory_Approvals__cs.json"
+        ]
+    }
+]
